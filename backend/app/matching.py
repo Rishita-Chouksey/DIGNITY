@@ -21,10 +21,12 @@ def recommend(db,p:Profile,top_k=5):
     sims={}
     ids=[str(s.id) for s in schemes]
     if ids and p.need_text and db.bind.dialect.name=='postgresql':
-        from .embeddings import embed
-        vec='['+','.join(map(str,embed(p.need_text)))+']'
-        rows=db.execute(text('SELECT id::text, 1 - (description_embedding <=> CAST(:v AS vector)) AS similarity FROM schemes WHERE id::text = ANY(:ids)'),{'v':vec,'ids':ids}).all()
-        sims={r[0]:float(r[1] or 0) for r in rows}
+        from .embeddings import try_embed
+        values=try_embed(p.need_text)
+        if values is not None:
+            vec='['+','.join(map(str,values))+']'
+            rows=db.execute(text('SELECT id::text, 1 - (description_embedding <=> CAST(:v AS vector)) AS similarity FROM schemes WHERE id::text = ANY(:ids)'),{'v':vec,'ids':ids}).all()
+            sims={r[0]:float(r[1] or 0) for r in rows}
     out=[]
     for s in schemes:
         es,details=score_scheme(s,p); semantic=sims.get(str(s.id),0.0); final=.7*es+.3*semantic

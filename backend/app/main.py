@@ -35,8 +35,10 @@ def recommendations(req:RecommendationRequest,db:Session=Depends(get_db)):
     rows=recommend(db,req.profile,req.top_k); result=[{**out(r['scheme']),**{k:v for k,v in r.items() if k!='scheme'},'disclaimer':'Suggestions only — you may be eligible based on the information provided. Confirm eligibility on the official source.'} for r in rows]
     q=SearchQuery(raw_text=req.profile.need_text or 'guided profile',extracted_profile=req.profile.model_dump(),top_results=[{'id':x['id'],'score':x['relevance_score']} for x in result]); db.add(q); db.commit()
     if req.profile.need_text and db.bind.dialect.name=='postgresql':
-        from .embeddings import embed
-        v='['+','.join(map(str,embed(req.profile.need_text)))+']'; db.execute(text('UPDATE search_queries SET need_embedding=CAST(:v AS vector) WHERE id=:id'),{'v':v,'id':q.id}); db.commit()
+        from .embeddings import try_embed
+        values=try_embed(req.profile.need_text)
+        if values is not None:
+            v='['+','.join(map(str,values))+']'; db.execute(text('UPDATE search_queries SET need_embedding=CAST(:v AS vector) WHERE id=:id'),{'v':v,'id':q.id}); db.commit()
     return {'disclaimer':'Suggestions, not confirmed eligibility. Always verify on the official source.','results':result}
 @app.get('/api/schemes')
 def schemes(db:Session=Depends(get_db)): return [out(s) for s in db.query(Scheme).all()]

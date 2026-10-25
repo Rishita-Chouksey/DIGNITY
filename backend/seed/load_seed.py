@@ -11,9 +11,11 @@ def main():
     db.flush(); db.commit(); print(f'Seeded {len(items)} curated verification_due records')
     # Seed embeddings once; a failed local model download leaves safe rule-only matching.
     try:
-        from app.embeddings import embed
+        from app.embeddings import try_embed
         for s in db.query(Scheme).filter(Scheme.description_embedding.is_(None)):
-            v='['+','.join(map(str,embed(s.description)))+']'; db.execute(text('UPDATE schemes SET description_embedding=CAST(:v AS vector) WHERE id=:id'),{'v':v,'id':s.id})
+            values=try_embed(s.description)
+            if values is not None:
+                v='['+','.join(map(str,values))+']'; db.execute(text('UPDATE schemes SET description_embedding=CAST(:v AS vector) WHERE id=:id'),{'v':v,'id':s.id})
         db.commit()
     except Exception as e: print(f'Embedding seed skipped: {e}')
 if __name__=='__main__': main()

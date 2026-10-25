@@ -28,6 +28,7 @@ export default function Recommendations() {
     <div className="banner">Suggestions, not confirmed eligibility. You may be eligible based on the information provided; confirm on the official source.</div>
     {error && <div className="card"><h2>Backend not connected</h2><p>{error}</p><p className="small">From the repository root: <code>cd backend</code>, then run <code>uvicorn app.main:app --reload</code>.</p></div>}
     {!data && !error && <p>Finding relevant schemes…</p>}
+    {data?.results?.length === 0 && <div className="card"><h2>No suggestions found yet</h2><p>The API is connected, but the local scheme catalogue is empty or no seeded scheme matches this profile.</p><p className="small">Run <code>python -m seed.load_seed</code> from the active backend virtual environment, then try again.</p></div>}
     {data?.results?.map((s: any) => <article className="card" key={s.id}>
       <span className="badge">Relevance {Math.round(s.relevance_score * 100)}%</span> <span className="badge due">{s.verification_status === 'verified' ? 'Verified' : 'Verification due'}</span>
       <h2>{s.scheme_name}</h2><p>{s.description}</p>
