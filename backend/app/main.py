@@ -19,6 +19,9 @@ app.add_middleware(
 )
 def admin(x_admin_token:str|None=Header(None)):
     if x_admin_token!=settings.admin_token: raise HTTPException(401,'Invalid admin token')
+def validate_verified_procedure(data: SchemeIn):
+    if data.verification_status=='verified' and (not data.apply_url or not data.procedure_source_url):
+        raise HTTPException(422,'Verified schemes require both apply_url and procedure_source_url.')
 def out(s): return {**{k:getattr(s,k) for k in SchemeIn.model_fields},'id':str(s.id),'last_verified':s.last_verified}
 def store_embedding(db, scheme_id, description):
     """Embedding writes are only invoked on admin create/update description."""
@@ -49,9 +52,11 @@ def scheme(scheme_id:str,db:Session=Depends(get_db)):
     return out(s)
 @app.post('/api/admin/schemes',dependencies=[Depends(admin)])
 def create(data:SchemeIn,db:Session=Depends(get_db)):
+    validate_verified_procedure(data)
     s=Scheme(**data.model_dump(exclude={'official_url'}),official_url=str(data.official_url)); db.add(s); db.commit(); db.refresh(s); store_embedding(db,s.id,s.description); db.commit(); return out(s)
 @app.put('/api/admin/schemes/{scheme_id}',dependencies=[Depends(admin)])
 def update(scheme_id:str,data:SchemeIn,db:Session=Depends(get_db)):
+    validate_verified_procedure(data)
     s=db.get(Scheme,scheme_id)
     if not s: raise HTTPException(404,'Scheme not found')
     description_changed=s.description!=data.description
@@ -68,4 +73,6 @@ def delete(scheme_id:str,db:Session=Depends(get_db)):
 def verify(scheme_id:str,db:Session=Depends(get_db)):
     s=db.get(Scheme,scheme_id)
     if not s: raise HTTPException(404,'Scheme not found')
+    if not s.apply_url or not s.procedure_source_url:
+        raise HTTPException(422,'Cannot verify: add both apply_url and procedure_source_url from official sources first.')
     s.last_verified=datetime.utcnow(); s.verification_status='verified'; db.commit(); return out(s)

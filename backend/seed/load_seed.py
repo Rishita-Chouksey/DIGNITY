@@ -5,8 +5,13 @@ from app.models import Scheme, Category
 from sqlalchemy import text
 def main():
     db=SessionLocal(); items=json.loads((Path(__file__).parent/'schemes_seed.json').read_text())
+    known_categories={name for (name,) in db.query(Category.name).all()}
     for item in items:
-        if item['category'] and not db.query(Category).filter_by(name=item['category']).first(): db.add(Category(name=item['category'],description='Seed category'))
+        # Backward-compatible seed input; database/API always store document objects.
+        item['required_documents']=[d if isinstance(d,dict) else {'name':d,'where_to_get':None,'note':None} for d in item.get('required_documents',[])]
+        if item['category'] and item['category'] not in known_categories:
+            db.add(Category(name=item['category'],description='Seed category'))
+            known_categories.add(item['category'])
         if not db.query(Scheme).filter_by(scheme_name=item['scheme_name']).first(): db.add(Scheme(**item))
     db.flush(); db.commit(); print(f'Seeded {len(items)} curated verification_due records')
     # Seed embeddings once; a failed local model download leaves safe rule-only matching.

@@ -16,7 +16,7 @@ def fallback_extract(text:str)->tuple[Profile,list[str]]:
         if any(w in low for w in words): p.occupation=value; break
     for value,words in {'post_matric':['college','undergraduate','graduation','post matric'],'class_9_10':['class 9','class 10'],'school':['school']}.items():
         if any(w in low for w in words): p.education_level=value; break
-    for value,words in {'SC':['scheduled caste',' sc '],'ST':['scheduled tribe',' st '],'disability':['disability','disabled','divyang'],'EWS':['ews']}.items():
+    for value,words in {'SC':['scheduled caste',' sc '],'ST':['scheduled tribe',' st '],'OBC':['other backward class','obc'],'disability':['disability','disabled','divyang'],'EWS':['ews']}.items():
         if any(w in ' '+low+' ' for w in words): p.special_category=value; break
     missing=[x for x in ['age','state','occupation','annual_income'] if getattr(p,x) is None]
     return p,missing
