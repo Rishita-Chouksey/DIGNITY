@@ -1,10 +1,23 @@
 import json
 from pathlib import Path
-from app.database import SessionLocal
+from app.database import SessionLocal, engine
 from app.models import Scheme, Category
 from sqlalchemy import text
+
+def apply_migrations():
+    if engine.dialect.name == 'postgresql':
+        mig_file = Path(__file__).resolve().parent.parent / 'migrations' / '002_apply_guide.sql'
+        if mig_file.exists():
+            with engine.connect() as conn:
+                raw_conn = conn.connection
+                with raw_conn.cursor() as cur:
+                    cur.execute(mig_file.read_text(encoding='utf-8'))
+                raw_conn.commit()
+
+
 def main():
-    db=SessionLocal(); items=json.loads((Path(__file__).parent/'schemes_seed.json').read_text())
+    apply_migrations()
+    db=SessionLocal(); items=json.loads((Path(__file__).parent/'schemes_seed.json').read_text(encoding='utf-8'))
     known_categories={name for (name,) in db.query(Category.name).all()}
     for item in items:
         # Backward-compatible seed input; database/API always store document objects.
@@ -24,3 +37,4 @@ def main():
         db.commit()
     except Exception as e: print(f'Embedding seed skipped: {e}')
 if __name__=='__main__': main()
+

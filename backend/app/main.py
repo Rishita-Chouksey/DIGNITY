@@ -3,20 +3,49 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 from datetime import datetime
-from .database import get_db
+from fastapi.responses import JSONResponse
+import logging
+from contextlib import asynccontextmanager
+from pathlib import Path
+from .database import get_db, engine
 from .models import Scheme, Category, SearchQuery
 from .schemas import *
 from .config import settings
 from .extraction import extract_profile
 from .matching import recommend
-app=FastAPI(title='DIGNITY API')
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    if engine.dialect.name == 'postgresql':
+        mig_file = Path(__file__).resolve().parent.parent / 'migrations' / '002_apply_guide.sql'
+        if mig_file.exists():
+            try:
+                with engine.connect() as conn:
+                    raw_conn = conn.connection
+                    with raw_conn.cursor() as cur:
+                        cur.execute(mig_file.read_text(encoding='utf-8'))
+                    raw_conn.commit()
+            except Exception as e:
+                logging.warning(f"Startup migration check skipped: {e}")
+    yield
+
+app=FastAPI(title='DIGNITY API', lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['http://localhost:3000', 'http://127.0.0.1:3000'],
+    allow_origins=['*'],
     allow_credentials=False,
     allow_methods=['*'],
     allow_headers=['*'],
 )
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request, exc):
+    logging.exception(f"Unhandled error on {request.url.path}: {exc}")
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error", "error": str(exc)},
+    )
+
 def admin(x_admin_token:str|None=Header(None)):
     if x_admin_token!=settings.admin_token: raise HTTPException(401,'Invalid admin token')
 def validate_verified_procedure(data: SchemeIn):
