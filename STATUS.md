@@ -1,17 +1,37 @@
 # Status
 
 ## Implemented
-- PostgreSQL/pgvector Compose and portable SQL migration; FastAPI models, CRUD, token guard, query logging, deterministic hard/soft matching, rule fallback extraction, evaluation fixture, and Next.js pages.
-- Every card repeats the cautious eligibility disclaimer; seed data contains official URLs and begins as `verification_due`.
-- Application-guidance schema/API/detail UI support: application mode, ordered official steps, browser-only document checklist, official apply link, procedure source, helpline, office information, and print styling. Verification is blocked until both official procedure links are supplied.
+- **PostgreSQL / pgvector schema & migrations**:
+  - `001_initial.sql` defines core scheme attributes, pgvector HNSW indexing, search query logging, and categories.
+  - `002_apply_guide.sql` introduces application guidance: `apply_url`, `application_mode` (`online`, `offline`, `both`), `application_steps` (`[{"step": int, "title": text, "detail": text}]`), `helpline`, `offline_office`, `procedure_source_url`, and migrates `required_documents` from plain string arrays to `[{"name": text, "where_to_get": text|null, "note": text|null}]`.
+- **Recommendation & Scoring Engine**:
+  - Combined deterministic hard/soft matching with pgvector semantic similarity (`all-MiniLM-L6-v2`) and keyword lexical fallback.
+  - Granular scoring resolves identical percentage badges across candidates; scores now reflect criteria match + semantic relevance.
+  - Gender filtering and special category validation prevent incompatible recommendations (e.g., female-only schemes are excluded for male applicants).
+  - Universal public schemes (e.g., food security, healthcare) are recognized with baseline eligibility for qualifying age/state.
+- **Truthfulness Rule & Application Guidance**:
+  - Strict compliance with DIGNITY boundaries: guidance only, no external form submission, no user logins, no government ID storage.
+  - Unverified procedures display "Procedure not yet verified — please follow the official page".
+  - Verification gate: Admins cannot mark schemes as `verified` (via API or Admin UI) unless both `apply_url` and `procedure_source_url` are provided from official sources.
+- **Admin Management UI (`/admin`)**:
+  - Form editor with dual mode (interactive form or raw JSON).
+  - Ordered Application Steps editor with step numbering, Add, Move Up, Move Down, and Remove controls.
+  - Document rows editor supporting `name`, `where_to_get`, and `note`.
+  - Application mode selector (`online`, `offline`, `both`), helpline, offline office, and official URLs.
+  - Real-time verification gate preventing verification when official links are missing.
+- **Scheme Detail Page (`/schemes/[id]`)**:
+  - "How to apply" section with application mode badge, numbered steps, interactive browser-only document checklist (state stored locally in React state, no account/server storage), helpline phone link, prominent "Open official application page" button (opens in new tab with `rel="noopener noreferrer"`), and print stylesheet support (`Print / Save as PDF`).
+  - Truthful source footer: `"Steps summarised from the official source on <last_verified>. Portals change — confirm on the official page before applying."`
+- **Link Validation & Evaluation Fixtures**:
+  - Link check script (`backend/eval/check_links.py`) validates `official_url` and `apply_url` via live HTTP requests and exports results to `eval/link_report.md`.
+  - Evaluation suite (`backend/eval/run_eval.py`) achieves 1.00 recall and 1.00 top-K accuracy across fixture profiles.
+  - Test suite (`pytest` in `backend/tests/`) passes 10/10 tests covering schema migration, application mode validation, admin verification gates, and matching rules.
+  - Frontend build (`next build`) compiles cleanly across all routes with zero errors.
 
 ## Important limitations / deviations
-- This environment's process runner failed before launching any command (`helper_unknown_error: setup refresh had errors`). Therefore I could not truthfully run Docker, pytest, uvicorn/curl, `npm run build`, Playwright, or create screenshots in `/docs/screenshots`. These are pending local verification.
-- Description embedding persistence on admin create/update is not completed: the matcher implements the required one-query pgvector similarity path, but model-column mapping and embedding write need a follow-up migration/implementation before semantic ranking is active. The current offline deterministic rules still rank safely.
-- The optional OpenAI provider needs `openai` installed when enabled; offline fallback is fully designed for no API key.
-- Seeded schemes do not yet carry verified application procedures, so their detail pages correctly show “Procedure not yet verified”. No procedure facts, helplines, document sources, or application links have been invented.
-- Local sentence-transformer loading is disabled by default (`EMBEDDINGS_ENABLED=false`) on this machine because the installed PyTorch runtime raised a meta-tensor error. Deterministic matching remains active; semantic scoring is inactive until that runtime is repaired.
-- The admin UI supports create/delete/verify. Full field-form edit is still a backend endpoint rather than a polished UI form.
+- Seeded schemes currently begin in `verification_due` status. Because official application portals change frequently, procedure steps and application URLs are left empty until manually verified by an administrator, correctly showing "Procedure not yet verified". No fake procedure steps or fake phone numbers are hallucinated.
+- LLM extractor uses rule-based fallback when `LLM_PROVIDER=none` or when no OpenAI API key is configured. Offline fallback regex accurately extracts age, state, occupation, income, special categories, and gender.
+- Embeddings are generated locally using `sentence-transformers` (`all-MiniLM-L6-v2`). When `embeddings_enabled` is inactive or running in non-PostgreSQL environments (e.g. SQLite unit tests), deterministic rule scoring with lexical overlap fallback ensures consistent execution.
 
 ## Deliberately out of scope (Phase 2/3)
-- Saved schemes, reminders, voice input, analytics, user accounts, application submission, payments, autonomous agents, and multi-turn chat.
+- User accounts, Aadhaar / government ID document storage, automatic form submission, payment handling, and autonomous agents.

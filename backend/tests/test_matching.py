@@ -18,3 +18,15 @@ def test_missing_data_is_uncertain():
 def test_explicit_special_category_mismatch_is_not_recommended():
     score,_,mismatch=score_scheme(s(occupation='student',special_category='SC'),Profile(occupation='student',special_category='OBC'))
     assert score==0 and mismatch
+def test_gender_filter_excludes_incompatible_gender():
+    p_male=Profile(gender='male')
+    p_female=Profile(gender='female')
+    female_scheme=s(gender='female')
+    assert not hard_filter(female_scheme, p_male)
+    assert hard_filter(female_scheme, p_female)
+    score,_,mismatch=score_scheme(female_scheme, p_male)
+    assert score==0 and mismatch
+def test_universal_scheme_eligible_baseline():
+    universal=s()
+    score,_,mismatch=score_scheme(universal, Profile(age=60, state='Delhi'))
+    assert score>0 and not mismatch

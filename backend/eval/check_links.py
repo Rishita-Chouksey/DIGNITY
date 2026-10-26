@@ -26,7 +26,11 @@ def main():
             rows.append((item['scheme_name'],label,status,detail))
     table=['# DIGNITY official-link report','','This is a live HTTP check only; it does not scrape or change source data.','','| Scheme | Link | Status | Redirect / detail |','|---|---|---:|---|']
     table += [f'| {name} | {kind} | {status} | {detail} |' for name,kind,status,detail in rows]
-    REPORT.write_text('\n'.join(table)+'\n',encoding='utf-8')
-    print(f'Wrote {REPORT}')
+    content = '\n'.join(table) + '\n'
+    REPORT.write_text(content, encoding='utf-8')
+    root_eval = ROOT.parent / 'eval'
+    root_eval.mkdir(parents=True, exist_ok=True)
+    (root_eval / 'link_report.md').write_text(content, encoding='utf-8')
+    print('Wrote link_report.md successfully')
 
 if __name__=='__main__': main()

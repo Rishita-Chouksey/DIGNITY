@@ -30,3 +30,9 @@ def test_api_scheme_shape_includes_apply_guide_fields():
     body=response.model_dump(mode='json')
     assert body['required_documents'][0]['name']=='Income certificate'
     assert body['application_steps'][0]['step']==1 and body['application_mode']=='online'
+
+def test_application_mode_allows_only_valid_modes():
+    valid=SchemeIn(**payload(application_mode='both'))
+    assert valid.application_mode=='both'
+    with pytest.raises(Exception):
+        SchemeIn(**payload(application_mode='invalid_mode'))

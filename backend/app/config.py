@@ -4,6 +4,6 @@ class Settings(BaseSettings):
     admin_token: str = 'change-me-for-demo'
     llm_provider: str = 'none'
     openai_api_key: str | None = None
-    embeddings_enabled: bool = False
+    embeddings_enabled: bool = True
     model_config = SettingsConfigDict(env_file='.env', extra='ignore')
 settings = Settings()
