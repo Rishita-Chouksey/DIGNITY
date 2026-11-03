@@ -7,7 +7,7 @@ logger = logging.getLogger("monitoring_scheduler")
 
 class MonitoringBackgroundScheduler:
     """
-    Lightweight, native async background scheduler for YojnaSarthi scheme monitoring.
+    Lightweight, native async background scheduler for DIGNITY scheme monitoring.
     Runs periodically without blocking FastAPI or requiring external task brokers.
     """
 

@@ -567,10 +567,10 @@ Citizen Text: "{text}"
         greetings = ["hi", "hello", "hey", "namaste", "नमस्ते", "प्रणाम", "ram ram", "start"]
         is_pure_greeting = msg_lower in greetings or (len(msg_lower) < 10 and any(msg_lower.startswith(g) for g in ["hi", "hello", "नमस्ते"]))
         if is_pure_greeting and (not history or len(history) == 0):
-            reply_hi = "नमस्ते! मैं योजनासारथी आधिकारिक सरकारी योजना सहायक हूँ। आप मुझसे किसी भी सरकारी योजना (जैसे MMVY, लाड़ली बहना, पीएम किसान, आयुष्मान), आवश्यक दस्तावेज़ (जैसे आय या मूल निवास प्रमाण पत्र), अथवा पात्रता नियमों के बारे में पूछ सकते हैं।"
-            reply_mr = "नमस्ते! मी तुमचा योजनासारथी अधिकृत सरकारी योजना सहाय्यक आहे. तुम्ही मला कोणत्याही सरकारी योजनेबद्दल (जसे की MMVY, लाडकी बहीण, पीएम किसान, आयुष्मान), आवश्यक कागदपत्रे किंवा पात्रता नियमांबद्दल विचारू शकता."
-            reply_bn = "নমস্কার! আমি আপনার যোজনা সারথী অফিসিয়াল সরকারি প্রকল্প সহকারী। আপনি আমাকে যে কোনও সরকারি প্রকল্প (যেমন MMVY, লাডলি বহনা, পিএম কিষাণ, আয়ুষ্মান), প্রয়োজনীয় কাগজপত্র বা যোগ্যতার নিয়ম সম্পর্কে জিজ্ঞাসা করতে পারেন।"
-            reply_en = "Namaste! I am your YojnaSarthi Government Scheme Assistant. You can ask me anything about government schemes (MMVY, Ladli Behna, PM-KISAN, Ayushman), required documents, income limits, or application procedures."
+            reply_hi = "नमस्ते! मैं DIGNITY आधिकारिक सरकारी योजना सहायक हूँ। आप मुझसे किसी भी सरकारी योजना (जैसे MMVY, लाड़ली बहना, पीएम किसान, आयुष्मान), आवश्यक दस्तावेज़ (जैसे आय या मूल निवास प्रमाण पत्र), अथवा पात्रता नियमों के बारे में पूछ सकते हैं।"
+            reply_mr = "नमस्ते! मी तुमचा DIGNITY अधिकृत सरकारी योजना सहाय्यक आहे. तुम्ही मला कोणत्याही सरकारी योजनेबद्दल (जसे की MMVY, लाडकी बहीण, पीएम किसान, आयुष्मान), आवश्यक कागदपत्रे किंवा पात्रता नियमांबद्दल विचारू शकता."
+            reply_bn = "নমস্কার! আমি আপনার DIGNITY অফিসিয়াল সরকারি প্রকল্প সহকারী। আপনি আমাকে যে কোনও সরকারি প্রকল্প (যেমন MMVY, লাডলি বহনা, পিএম কিষাণ, আয়ুষ্মান), প্রয়োজনীয় কাগজপত্র বা যোগ্যতার নিয়ম সম্পর্কে জিজ্ঞাসা করতে পারেন।"
+            reply_en = "Namaste! I am your DIGNITY Government Scheme Assistant. You can ask me anything about government schemes (MMVY, Ladli Behna, PM-KISAN, Ayushman), required documents, income limits, or application procedures."
             chosen_reply = reply_mr if language == "mr" else (reply_bn if language == "bn" else (reply_hi if language == "hi" else reply_en))
             AuditRepository.log_chat_interaction(msg_clean, None, "GREETING", chosen_reply, language)
             return {
@@ -587,29 +587,29 @@ Citizen Text: "{text}"
 
                 if language == "hi":
                     reply = (
-                        f"क्षमा करें, योजनासारथी में वर्तमान में **{uncat['name_hi']}** के नियम उपलब्ध नहीं हैं।\n\n"
-                        f"योजनासारथी वर्तमान में आधिकारिक रूप से सत्यापित सरकारी योजनाओं के नियम प्रदान करता है।\n\n"
+                        f"क्षमा करें, DIGNITY में वर्तमान में **{uncat['name_hi']}** के नियम उपलब्ध नहीं हैं।\n\n"
+                        f"DIGNITY वर्तमान में आधिकारिक रूप से सत्यापित सरकारी योजनाओं के नियम प्रदान करता है।\n\n"
                         f"**{uncat['name_hi']}** की आधिकारिक जानकारी व ऑनलाइन आवेदन हेतु कृपया {portal} पर जाएं:\n"
                         f"🔗 आधिकारिक पोर्टल: {url}"
                     )
                 elif language == "mr":
                     reply = (
-                        f"क्षमस्व, योजनासारथीमध्ये सध्या **{uncat.get('name_mr', uncat['name_en'])}** चे नियम उपलब्ध नाहीत.\n\n"
-                        f"योजनासारथी सध्या अधिकृतपणे सत्यापित सरकारी योजनांचे नियम प्रदान करते.\n\n"
+                        f"क्षमस्व, DIGNITY मध्ये सध्या **{uncat.get('name_mr', uncat['name_en'])}** चे नियम उपलब्ध नाहीत.\n\n"
+                        f"DIGNITY सध्या अधिकृतपणे सत्यापित सरकारी योजनांचे नियम प्रदान करते.\n\n"
                         f"**{uncat.get('name_mr', uncat['name_en'])}** च्या अधिकृत माहिती व ऑनलाइन अर्जासाठी कृपया {portal} ला भेट द्या:\n"
                         f"🔗 अधिकृत पोर्टल: {url}"
                     )
                 elif language == "bn":
                     reply = (
-                        f"দুঃখিত, যোজনাসারথিতে বর্তমানে **{uncat['name_bn']}**-এর নিয়মাবলী অন্তর্ভুক্ত নেই।\n\n"
-                        f"যোজনাসারথি বর্তমানে যাচাইকৃত সরকারি প্রকল্পের তথ্য প্রদান করে।\n\n"
+                        f"দুঃখিত, DIGNITY-তে বর্তমানে **{uncat['name_bn']}**-এর নিয়মাবলী অন্তর্ভুক্ত নেই।\n\n"
+                        f"DIGNITY বর্তমানে যাচাইকৃত সরকারি প্রকল্পের তথ্য প্রদান করে।\n\n"
                         f"**{uncat['name_bn']}**-এর তথ্যের জন্য অনুগ্রহ করে অফিসিয়াল পোর্টালে যান:\n"
                         f"🔗 অফিসিয়াল পোর্টাল: {url}"
                     )
                 else:
                     reply = (
-                        f"I apologize, but YojnaSarthi does not currently have verified rules for **{uncat['name_en']}** in our database.\n\n"
-                        f"Currently, YojnaSarthi provides audited rules for 8 verified schemes: Mukhyamantri Medhavi Vidyarthi Yojana (MMVY), Mukhyamantri Ladli Behna, PM-KISAN, Ayushman Bharat PM-JAY, PMAY-G Rural Housing, Sanjay Gandhi Niradhar, and Indira Gandhi Widow Pension.\n\n"
+                        f"I apologize, but DIGNITY does not currently have verified rules for **{uncat['name_en']}** in our database.\n\n"
+                        f"Currently, DIGNITY provides audited rules for 8 verified schemes: Mukhyamantri Medhavi Vidyarthi Yojana (MMVY), Mukhyamantri Ladli Behna, PM-KISAN, Ayushman Bharat PM-JAY, PMAY-G Rural Housing, Sanjay Gandhi Niradhar, and Indira Gandhi Widow Pension.\n\n"
                         f"For official information and applying to **{uncat['name_en']}**, please visit the {portal}:\n"
                         f"🔗 Official Portal: {url}"
                     )
@@ -890,12 +890,12 @@ Restrictions / Exclusions: {current_scheme.restrictions}
                         history_snippet += f"{sender}: {text}\n"
 
                 system_instruction = f"""
-You are YojnaSarthi's Official Government Scheme AI Assistant for Indian citizens.
+You are DIGNITY's Official Government Scheme AI Assistant for Indian citizens.
 CRITICAL INSTRUCTIONS:
-1. NEVER output generic welcome messages like "Welcome to YojnaSarthi" to a question. Answer the citizen's actual question directly and thoroughly.
+1. NEVER output generic welcome messages like "Welcome to DIGNITY" to a question. Answer the citizen's actual question directly and thoroughly.
 2. Ground your entire answer strictly in the official scheme knowledge and verified rules provided. Never invent benefits, deadlines, or unverified claims.
 3. Understand conversational context and follow-up questions from the conversation history.
-4. If asked about a scheme not in our verified library, state that YojnaSarthi only has audited rules for our current schemes (MMVY, Ladli Behna, PM-KISAN, PMAY-G, Ayushman PM-JAY, Widow Pensions) and direct them to india.gov.in.
+4. If asked about a scheme not in our verified library, state that DIGNITY only has audited rules for our current schemes (MMVY, Ladli Behna, PM-KISAN, PMAY-G, Ayushman PM-JAY, Widow Pensions) and direct them to india.gov.in.
 5. Answer simply, warmly, and respectfully in {'Hindi (हिन्दी)' if language == 'hi' else ('Marathi (मराठी)' if language == 'mr' else ('Bengali (বাংলা)' if language == 'bn' else 'English'))}.
 6. Always mention the official portal link and helpline when providing scheme guidance.
 """
@@ -1032,7 +1032,7 @@ Citizen Query: "{message}"
         return {
             "reply": reply,
             "grounded_sources": list(dict.fromkeys(sources)),
-            "disclaimer": "Eligibility evaluation computed deterministically by YojnaSarthi rules engine. Official sanction requires department verification."
+            "disclaimer": "Eligibility evaluation computed deterministically by DIGNITY rules engine. Official sanction requires department verification."
         }
 
     def _deterministic_chat_response(
@@ -1130,13 +1130,13 @@ Citizen Query: "{message}"
         # Unknown scheme or general query
         if language == "hi":
             reply = (
-                f"क्षमा करें, योजनासारथी में वर्तमान में आधिकारिक रूप से सत्यापित सरकारी योजनाओं (MMVY छात्रवृत्ति, लाड़ली बहना, पीएम किसान, आयुष्मान भारत, पीएम आवास ग्रामीण, संजय गांधी निराधार और विधवा पेंशन) के नियम उपलब्ध हैं।\n\n"
+                f"क्षमा करें, DIGNITY में वर्तमान में आधिकारिक रूप से सत्यापित सरकारी योजनाओं (MMVY छात्रवृत्ति, लाड़ली बहना, पीएम किसान, आयुष्मान भारत, पीएम आवास ग्रामीण, संजय गांधी निराधार और विधवा पेंशन) के नियम उपलब्ध हैं।\n\n"
                 f"आप मुझसे इन योजनाओं की पात्रता, आवश्यक दस्तावेज़ (जैसे आय, मूल निवास या समग्र आईडी), अथवा आवेदन प्रक्रिया के बारे में पूछ सकते हैं।\n"
                 f"अन्य योजनाओं के लिए कृपया भारत सरकार के राष्ट्रीय पोर्टल https://india.gov.in/ पर देखें।"
             )
         else:
             reply = (
-                f"Currently, YojnaSarthi provides answers strictly grounded in audited official rules for our verified schemes (MMVY Scholarship, Ladli Behna, PM-KISAN, Ayushman Bharat PM-JAY, PMAY-G Rural Housing, Sanjay Gandhi Niradhar, and Widow Pensions).\n\n"
+                f"Currently, DIGNITY provides answers strictly grounded in audited official rules for our verified schemes (MMVY Scholarship, Ladli Behna, PM-KISAN, Ayushman Bharat PM-JAY, PMAY-G Rural Housing, Sanjay Gandhi Niradhar, and Widow Pensions).\n\n"
                 f"You can ask about eligibility conditions, required documents (Income, Domicile, Samagra, or Bank Passbook), or official application procedures.\n"
                 f"For other central/state programs, please visit the official National Portal of India at https://india.gov.in/."
             )
@@ -1144,7 +1144,7 @@ Citizen Query: "{message}"
         return {
             "reply": reply,
             "grounded_sources": ["https://india.gov.in/"],
-            "disclaimer": "YojnaSarthi only answers from audited official rules and never invents unverified information."
+            "disclaimer": "DIGNITY only answers from audited official rules and never invents unverified information."
         }
 
     def explain_form(self, field_text: Optional[str] = None, image_base64: Optional[str] = None, language: str = "hi") -> Dict[str, Any]:

@@ -27,5 +27,5 @@ GITHUB_REPOSITORY = os.getenv("GITHUB_REPOSITORY", "")
 
 USER_AGENT = os.getenv(
     "UPDATER_USER_AGENT",
-    "YojnaSarthi-SchemeUpdater/2.1 (+https://github.com/org/yojnasarthi; bot@yojnasarthi.org)"
+    "DIGNITY-SchemeUpdater/2.1 (+https://github.com/org/dignity; bot@dignity.org)"
 )

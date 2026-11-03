@@ -117,7 +117,7 @@ class MySchemeAPIService(MySchemeAdapterInterface):
     def _build_headers(self) -> Dict[str, str]:
         headers = {
             "Accept": "application/json",
-            "User-Agent": "YojnaSarthi-CivicAssistant/1.0",
+            "User-Agent": "DIGNITY-CivicAssistant/1.0",
         }
         if self.api_key:
             headers["X-API-KEY"] = self.api_key
@@ -154,7 +154,7 @@ class MySchemeAPIService(MySchemeAdapterInterface):
 
     def normalize_myscheme_to_internal(self, raw_data: Dict[str, Any]) -> SchemeDefinition:
         """
-        Normalizes a raw response from myScheme / API Setu into YojnaSarthi's SchemeDefinition format.
+        Normalizes a raw response from myScheme / API Setu into DIGNITY's SchemeDefinition format.
         Preserves source traceability and explicitly marks unavailable fields rather than silently dropping them.
         """
         scheme_id = str(raw_data.get("id") or raw_data.get("scheme_id") or raw_data.get("slug") or "unknown_scheme")

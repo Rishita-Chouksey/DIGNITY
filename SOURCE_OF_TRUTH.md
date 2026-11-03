@@ -1,8 +1,8 @@
-# 🏛️ YojnaSarthi (योजनासारथी) — Living Source of Truth
+# 🏛️ DIGNITY — Living Source of Truth
 
 > **DOCUMENT STATUS:** Active & Authoritative  
 > **LAST UPDATED:** 2026-10-31  
-> **PURPOSE:** This is the single, authoritative living reference document for the entire YojnaSarthi codebase. Developers and AI assistants (Claude, GPT, Gemini) must consult and update this document whenever modifying, adding, or refactoring capabilities.
+> **PURPOSE:** This is the single, authoritative living reference document for the entire DIGNITY codebase. Developers and AI assistants (Claude, GPT, Gemini) must consult and update this document whenever modifying, adding, or refactoring capabilities.
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## 1. Core Purpose & Architectural Invariants
 
-**YojnaSarthi (योजनासारथी)** is a privacy-first, bilingual (Hindi & English), AI-assisted government scheme eligibility and civic assistance platform designed specifically for Indian citizens, especially rural and low-digital-literacy users.
+**DIGNITY** is a privacy-first, bilingual (Hindi & English), AI-assisted government scheme eligibility and civic assistance platform designed specifically for Indian citizens, especially rural and low-digital-literacy users.
 
 ### Non-Negotiable Invariants:
 1. **Rule Engine Is the Sole Eligibility Authority**:
@@ -62,7 +62,7 @@
 | **Backend Framework** | **FastAPI** | >=0.110.0 | Async Python REST API server & auto OpenAPI docs |
 | **ASGI Server** | **Uvicorn** | >=0.28.0 | High-performance asynchronous web server |
 | **Data Validation** | **Pydantic** | >=2.6.0 (v2) | Strict schema validation for profiles, rules, and responses |
-| **Database** | **SQLite 3** | File: `backend/data/yojnasarthi.db` | WAL mode, indexed relational store with automatic schema init |
+| **Database** | **SQLite 3** | File: `backend/data/dignity.db` | WAL mode, indexed relational store with automatic schema init |
 | **Async HTTP Client** | **HTTPX** | >=0.27.0 | Non-blocking HTTP calls for Azure AI Translator and polite crawler |
 | **Generative AI** | **Google Gemini** | `google-genai` (2.5 Flash) | Natural language profile extraction and helpdesk reasoning |
 | **Cloud Translation** | **Microsoft Azure AI Translator** | REST API v3.0 | Secure server-side translation across English (`en`), Hindi (`hi`), Bengali (`bn`) with SHA-256 caching |
@@ -135,7 +135,7 @@ The frontend operates as a state machine managed by `SessionContext.jsx` with sc
 
 ## 5. Database Architecture & Relational Schema
 
-Located at `backend/data/yojnasarthi.db`. Auto-initialized on startup by `init_db()` in WAL mode.
+Located at `backend/data/dignity.db`. Auto-initialized on startup by `init_db()` in WAL mode.
 
 ### Database Tables:
 1. **`schemes`**: Verified government welfare scheme repository.
@@ -160,14 +160,14 @@ Located at `backend/data/yojnasarthi.db`. Auto-initialized on startup by `init_d
 ## 6. Voice & Audio Assistance Stack
 
 ### Speech-to-Text (Voice Mic):
-- Implemented in [`frontend/src/services/speech.js`](file:///c:/Users/Lenovo/OneDrive/Desktop/YojnaSarthi/frontend/src/services/speech.js) and [`VoiceMic.jsx`](file:///c:/Users/Lenovo/OneDrive/Desktop/YojnaSarthi/frontend/src/components/VoiceMic.jsx).
+- Implemented in [`frontend/src/services/speech.js`](file:///c:/Users/Lenovo/OneDrive/문서/ChatGPT/DIGNITY/frontend/src/services/speech.js) and [`VoiceMic.jsx`](file:///c:/Users/Lenovo/OneDrive/문서/ChatGPT/DIGNITY/frontend/src/components/VoiceMic.jsx).
 - Uses native `webkitSpeechRecognition` with continuous listening (`recognition.continuous = true`).
 - Emits real-time live interim transcripts (`onInterim`) into input fields.
 - Language binding: `hi-IN` for Hindi, `en-IN` for English.
 - 100% client-side continuous speech recognition with zero audio stored or transmitted to external servers.
 
 ### Text-to-Speech (Read-Aloud Speaker):
-- Implemented in [`frontend/src/services/speech.js`](file:///c:/Users/Lenovo/OneDrive/Desktop/YojnaSarthi/frontend/src/services/speech.js) and [`AudioSpeaker.jsx`](file:///c:/Users/Lenovo/OneDrive/Desktop/YojnaSarthi/frontend/src/components/AudioSpeaker.jsx).
+- Implemented in [`frontend/src/services/speech.js`](file:///c:/Users/Lenovo/OneDrive/문서/ChatGPT/DIGNITY/frontend/src/services/speech.js) and [`AudioSpeaker.jsx`](file:///c:/Users/Lenovo/OneDrive/문서/ChatGPT/DIGNITY/frontend/src/components/AudioSpeaker.jsx).
 - Uses native `window.speechSynthesis` with Indian voice auto-selection (`Swara`, `Hemant`, `Kalpana` for Hindi; `en-IN`, `Ravi`, `Heera` for English).
 - **Phonetic Acronym Engine**: Translates government abbreviations before speaking:
   - `MMVY` &rarr; *"एम.एम.वी.वाई."*
@@ -206,7 +206,7 @@ Located in `backend/app/monitoring/`:
    - Central & MP government portals tracked independently (PM-KISAN, PM-JAY, PMAY-G, NSAP, NSP, Ladli Behna, MP Scholarship 2.0 MMVY, MP e-District, MP Farmer DBT, myScheme public reference, data.gov.in).
 2. **Polite Web Crawler (`crawler.py`)**:
    - Checks `robots.txt` before fetching (`urllib.robotparser`).
-   - Identifies with respectful civic User-Agent: `YojnaSarthi-SchemeMonitor/1.0 (+https://yojnasarthi.in/civic-bot)`.
+   - Identifies with respectful civic User-Agent: `DIGNITY-SchemeMonitor/1.0 (+https://dignity.in/civic-bot)`.
    - Domain rate-limiting (1.0s delay), 12s timeout, max 2 retries.
    - Handles HTML pages, downloadable PDFs, and RSS/Atom feeds.
    - **Fault Isolation**: If one government server times out, all other sources continue monitoring.
@@ -319,7 +319,7 @@ All backend endpoints are prefixed with `/api` (except `/health` and `/`):
 ## 13. Directory Tree & File Responsibilities
 
 ```
-YojnaSarthi/
+DIGNITY/
 ├── .gitignore                          # Root ignore: venv, .env, db, node_modules, pycache
 ├── README.md                           # Quickstart and overview guide
 ├── SOURCE_OF_TRUTH.md                  # THIS FILE: Master technical specification
@@ -367,7 +367,7 @@ YojnaSarthi/
 │   │       ├── gemini_service.py       # Gemini AI client + 5 deterministic intent handlers
 │   │       └── myscheme_adapter.py     # myScheme / API Setu adapter with local fallback
 │   ├── data/
-│   │   ├── yojnasarthi.db              # SQLite relational database (WAL mode)
+│   │   ├── dignity.db                  # SQLite relational database (WAL mode)
 │   │   ├── schemes.json                # Verified government scheme repository
 │   │   └── schemes/                    # Individual scheme JSON definitions
 │   └── tests/
@@ -444,7 +444,7 @@ npm --prefix frontend run build
 
 ## 15. How to Maintain & Update This Living Document
 
-Whenever a new feature, screen, API endpoint, or database table is added or modified in YojnaSarthi:
+Whenever a new feature, screen, API endpoint, or database table is added or modified in DIGNITY:
 1. **Update Section 2** if any dependency or tool version changes.
 2. **Update Section 4 & 13** if a new screen, component, or file is introduced.
 3. **Update Section 5** if new database tables, columns, or indexes are created.

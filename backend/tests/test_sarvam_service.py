@@ -38,7 +38,7 @@ def test_translation_endpoint_fallback():
 
 def test_translation_bengali():
     payload = {
-        "text": "Hello, welcome to YojnaSarthi.",
+        "text": "Hello, welcome to DIGNITY.",
         "sourceLanguage": "en",
         "targetLanguage": "bn"
     }

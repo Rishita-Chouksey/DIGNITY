@@ -30,7 +30,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
 )
-logger = logging.getLogger("yojnasarthi")
+logger = logging.getLogger("dignity")
 
 class SecurityAndPrivacyMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):

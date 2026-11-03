@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: yojnasarthi-api
+    name: dignity-api
     env: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
@@ -19,5 +19,5 @@ services:
       - key: SCHEME_CACHE_TTL_SECONDS
         value: "3600"
       - key: ADMIN_API_KEY
-        value: "yojnasarthi-admin-secret-2026"
+        value: "dignity-admin-secret-2026"
 

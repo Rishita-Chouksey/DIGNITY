@@ -1,4 +1,4 @@
-// YojnaSarthi Speech Service: Multilingual (Hindi, English, Marathi, Bengali) Voice Recognition & Synthesis
+// DIGNITY Speech Service: Multilingual (Hindi, English, Marathi, Bengali) Voice Recognition & Synthesis
 // Strictly privacy-preserving: Zero voice audio recorded or stored on server.
 
 // Phonetic acronym map for natural Indian language pronunciation

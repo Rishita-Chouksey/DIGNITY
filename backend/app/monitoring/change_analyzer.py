@@ -46,7 +46,7 @@ class SchemeChangeAnalyzer:
         if self.client:
             try:
                 prompt = f"""
-You are an expert Government Policy Analyst for the Indian Civic System YojnaSarthi.
+You are an expert Government Policy Analyst for the Indian Civic System DIGNITY.
 Analyze the following change detected on an official government portal.
 
 Scheme: {scheme_name} (ID: {scheme_id})

@@ -97,8 +97,8 @@ export async function sendChatMessage(message, currentSchemeId = null, profile =
     console.warn('Chat network fallback:', err);
     return {
       reply: language === 'hi'
-        ? "नमस्ते! योजनासारथी सरकारी योजना पात्रता व मार्गदर्शन सहायक है। आप MMVY छात्रवृत्ति, लाड़ली बहना, पीएम किसान, आयुष्मान भारत, अथवा आवश्यक दस्तावेजों (जैसे आय, मूल निवास, समग्र आईडी, खसरा) के बारे में पूछ सकते हैं।"
-        : "Namaste! I am your YojnaSarthi Government Scheme Assistant. You can ask about eligibility rules for MMVY Scholarship, Ladli Behna, PM-KISAN, Ayushman Bharat, PMAY-G Housing, or required certificates.",
+        ? "नमस्ते! DIGNITY सरकारी योजना पात्रता व मार्गदर्शन सहायक है। आप MMVY छात्रवृत्ति, लाड़ली बहना, पीएम किसान, आयुष्मान भारत, अथवा आवश्यक दस्तावेजों (जैसे आय, मूल निवास, समग्र आईडी, खसरा) के बारे में पूछ सकते हैं।"
+        : "Namaste! I am your DIGNITY Government Scheme Assistant. You can ask about eligibility rules for MMVY Scholarship, Ladli Behna, PM-KISAN, Ayushman Bharat, PMAY-G Housing, or required certificates.",
       grounded_sources: ["https://india.gov.in/"],
       disclaimer: "Grounded in verified official rules."
     };
@@ -227,7 +227,7 @@ export async function fetchIntegrationsStatus() {
 function getAdminHeaders(adminKey) {
   return {
     'Content-Type': 'application/json',
-    'X-Admin-Key': adminKey || 'yojnasarthi-admin-secret-2026',
+    'X-Admin-Key': adminKey || 'dignity-admin-secret-2026',
   };
 }
 
@@ -314,7 +314,7 @@ export async function rollbackSchemeVersion(adminKey, schemeId, targetVersionId,
 // ==============================================================================
 // Multi-Agent Discovery & Scheme Intelligence API
 // ==============================================================================
-const ADMIN_API_KEY = 'yojnasarthi-admin-secret-2026';
+const ADMIN_API_KEY = 'dignity-admin-secret-2026';
 
 function adminHeaders(customHeaders = {}) {
   return {

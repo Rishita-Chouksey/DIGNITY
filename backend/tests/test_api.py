@@ -106,7 +106,7 @@ def test_chat_helpdesk_direct_scheme_query():
     data = response.json()
     reply = data["reply"]
     assert "Mukhyamantri Medhavi Vidyarthi Yojana" in reply or "MMVY" in reply
-    assert "Welcome to YojnaSarthi! How can I help you today?" not in reply
+    assert "Welcome to DIGNITY! How can I help you today?" not in reply
 
 def test_chat_helpdesk_follow_up_with_history():
     # User asks a follow-up referring to previous context

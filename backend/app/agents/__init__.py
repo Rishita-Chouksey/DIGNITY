@@ -1,5 +1,5 @@
 """
-YojnaSarthi Multi-Agent Scheme Discovery and Monitoring System.
+DIGNITY Multi-Agent Scheme Discovery and Monitoring System.
 Lightweight Python multi-agent architecture coordinating 9 specialized agents.
 """
 

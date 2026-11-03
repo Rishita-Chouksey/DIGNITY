@@ -21,7 +21,7 @@ from app.services.scheme_service import scheme_service
 from app.db.database import get_db_connection, seed_monitoring_sources, seed_monitoring_demo_data
 
 client = TestClient(app)
-VALID_ADMIN_KEY = getattr(settings, "ADMIN_API_KEY", "yojnasarthi-admin-secret-2026")
+VALID_ADMIN_KEY = getattr(settings, "ADMIN_API_KEY", "dignity-admin-secret-2026")
 
 @pytest.fixture(autouse=True)
 def setup_monitoring_db():

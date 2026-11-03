@@ -4,7 +4,7 @@ import logging
 from typing import List, Dict, Any, Optional
 from .database import get_db_connection
 
-logger = logging.getLogger("yojnasarthi_repo")
+logger = logging.getLogger("dignity_repo")
 
 def _scheduler_running() -> bool:
     try:

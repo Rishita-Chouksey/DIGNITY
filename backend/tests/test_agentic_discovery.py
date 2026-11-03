@@ -163,7 +163,7 @@ def test_robots_policy_is_respected_and_unknown_policy_fails_closed(monkeypatch)
             self.text = text
 
     class Client:
-        headers = {"User-Agent": "YojnaSarthi-Test"}
+        headers = {"User-Agent": "DIGNITY-Test"}
 
         def __init__(self, response):
             self.response = response
@@ -456,7 +456,7 @@ def test_monitoring_pipeline_review_publish_and_history(monkeypatch):
 
 # 10. API Endpoints Live Check
 def test_agent_api_endpoints():
-    headers = {"X-Admin-Key": "yojnasarthi-admin-secret-2026"}
+    headers = {"X-Admin-Key": "dignity-admin-secret-2026"}
     # Status
     resp_stat = client.get("/api/agents/status", headers=headers)
     assert resp_stat.status_code == 200

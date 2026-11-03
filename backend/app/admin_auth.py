@@ -91,9 +91,9 @@ def create_admin_session(username: str) -> tuple[str, str]:
 def require_admin(request: Request) -> Dict[str, Any]:
     # 1. Check API Key header (used by monitoring endpoints and automated tests)
     admin_key = request.headers.get("X-Admin-Key")
-    expected_key = getattr(settings, "ADMIN_API_KEY", "") or "yojnasarthi-admin-secret-2026"
+    expected_key = getattr(settings, "ADMIN_API_KEY", "") or "dignity-admin-secret-2026"
     if admin_key is not None:
-        if admin_key and (hmac.compare_digest(admin_key.encode("utf-8"), expected_key.encode("utf-8")) or admin_key == "yojnasarthi-admin-secret-2026"):
+        if admin_key and (hmac.compare_digest(admin_key.encode("utf-8"), expected_key.encode("utf-8")) or admin_key == "dignity-admin-secret-2026"):
             return {"sub": "admin_api_key", "role": "admin"}
         else:
             raise HTTPException(status_code=401, detail="Unauthorized: Invalid admin API key.")

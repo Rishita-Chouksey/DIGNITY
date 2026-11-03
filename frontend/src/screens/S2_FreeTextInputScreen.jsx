@@ -69,13 +69,13 @@ export default function S2_FreeTextInputScreen() {
   useEffect(() => {
     let welcomeText = '';
     if (language === 'hi') {
-      welcomeText = 'नमस्ते! मैं आपका योजनासारथी दो-तरफ़ा आवाज़ सहायक हूँ। अपने बारे में बताएं—जैसे आपकी आयु, काम, राज्य या परिवार—ताकि मैं आपकी पात्र सरकारी योजनाएं खोज सकूँ।';
+      welcomeText = 'नमस्ते! मैं आपका DIGNITY दो-तरफ़ा आवाज़ सहायक हूँ। अपने बारे में बताएं—जैसे आपकी आयु, काम, राज्य या परिवार—ताकि मैं आपकी पात्र सरकारी योजनाएं खोज सकूँ।';
     } else if (language === 'mr') {
-      welcomeText = 'नमस्कार! मी योजनासारथी व्हॉइस असिस्टंट आहे. आपल्याबद्दल सांगा—जसे की आपले वय, व्यवसाय किंवा राज्य—जेणेकरून मी आपल्यासाठी पात्र योजना शोधू शकेन.';
+      welcomeText = 'नमस्कार! मी DIGNITY व्हॉइस असिस्टंट आहे. आपल्याबद्दल सांगा—जसे की आपले वय, व्यवसाय किंवा राज्य—जेणेकरून मी आपल्यासाठी पात्र योजना शोधू शकेन.';
     } else if (language === 'bn') {
-      welcomeText = 'নমস্কার! আমি যোজনা সারথী ভয়েস সহকারী। আপনার বয়স, পেশা বা রাজ্য সম্পর্কে বলুন—যাতে আমি আপনার জন্য উপযুক্ত সরকারি প্রকল্প খুঁজে বের করতে পারি।';
+      welcomeText = 'নমস্কার! আমি DIGNITY ভয়েস সহকারী। আপনার বয়স, পেশা বা রাজ্য সম্পর্কে বলুন—যাতে আমি আপনার জন্য উপযুক্ত সরকারি প্রকল্প খুঁজে বের করতে পারি।';
     } else {
-      welcomeText = 'Namaste! I am your YojnaSarthi two-way voice assistant. Speak naturally about yourself—your age, occupation, state, or family—so I can discover your eligible welfare schemes.';
+      welcomeText = 'Namaste! I am your DIGNITY two-way voice assistant. Speak naturally about yourself—your age, occupation, state, or family—so I can discover your eligible welfare schemes.';
     }
 
     const initialMsg = {
@@ -1042,7 +1042,7 @@ export default function S2_FreeTextInputScreen() {
                       {isAi ? (
                         <>
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
-                          <span className="text-cyan-300 font-bold">YojnaSarthi Voice AI</span>
+                          <span className="text-cyan-300 font-bold">DIGNITY Voice AI</span>
                         </>
                       ) : (
                         <>

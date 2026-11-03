@@ -12,7 +12,7 @@ class ApiTestClient:
         self.cookies = httpx.Cookies()
 
     def request(self, method, url, **kwargs):
-        if os.getenv("YOJNASARTHI_SKIP_ASGI_TESTS") == "1":
+        if os.getenv("DIGNITY_SKIP_ASGI_TESTS") == "1":
             pytest.skip("ASGI HTTP tests skipped because this runner blocks loopback socketpairs.")
         async def send():
             async with httpx.AsyncClient(

@@ -4,10 +4,10 @@ import json
 import logging
 from typing import Optional, List, Dict, Any
 
-logger = logging.getLogger("yojnasarthi_db")
+logger = logging.getLogger("dignity_db")
 
 DB_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "data"))
-DB_PATH = os.path.join(DB_DIR, "yojnasarthi.db")
+DB_PATH = os.path.join(DB_DIR, "dignity.db")
 
 _tables_initialized = False
 

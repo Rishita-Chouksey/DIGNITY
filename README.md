@@ -1,4 +1,4 @@
-# 🏛️ YojnaSarthi (योजनासारथी)
+# 🏛️ DIGNITY
 ### AI-Powered Government Scheme Eligibility Assistant for Indian Citizens
 
 > **Core Product Principle**:  
@@ -8,7 +8,7 @@
 
 ## 🌟 Overview
 
-**YojnaSarthi** is a mobile-first, privacy-respecting, bilingual (Hindi & English) AI-powered assistant designed for Indian citizens. It enables anyone—regardless of literacy level or technical background—to easily discover government welfare schemes, understand exact eligibility criteria with deterministic proof, generate a personalized de-duplicated document checklist, and demystify complex government application forms.
+**DIGNITY** is a mobile-first, privacy-respecting, bilingual (Hindi & English) AI-powered assistant designed for Indian citizens. It enables anyone—regardless of literacy level or technical background—to easily discover government welfare schemes, understand exact eligibility criteria with deterministic proof, generate a personalized de-duplicated document checklist, and demystify complex government application forms.
 
 ### Key Pillars
 1. **Deterministic Rule Engine**: Eligibility is computed by an audited Python rules engine (`eq`, `ne`, `in`, `not_in`, `lte`, `gte`, `between`). AI **never** makes unauthorized eligibility claims.

@@ -12,7 +12,7 @@ from .fingerprint import sanitize_extracted_text, calculate_content_fingerprint
 
 logger = logging.getLogger("scheme_crawler")
 
-CIVIC_USER_AGENT = "YojnaSarthi-SchemeMonitor/1.0 (+https://yojnasarthi.in/civic-bot; contact@yojnasarthi.in)"
+CIVIC_USER_AGENT = "DIGNITY-SchemeMonitor/1.0 (+https://dignity.in/civic-bot; contact@dignity.in)"
 
 # In-memory domain rate limiter and robots.txt cache
 _domain_last_request_time: Dict[str, float] = {}

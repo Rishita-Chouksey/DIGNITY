@@ -1,5 +1,5 @@
 """
-Offline, API-free translation for YojnaSarthi (English <-> Hindi <-> Bengali).
+Offline, API-free translation for DIGNITY (English <-> Hindi <-> Bengali).
 
 How it works (nothing leaves the server, no keys, no per-request cost):
 

@@ -18,7 +18,7 @@ def create_agent_http_client(timeout_seconds: float = 25.0) -> httpx.Client:
         "User-Agent": (
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/124.0.0.0 Safari/537.36 YojnaSarthi/2.0"
+            "Chrome/124.0.0.0 Safari/537.36 DIGNITY/2.0"
         ),
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,application/pdf,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9,hi;q=0.8",

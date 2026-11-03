@@ -13,7 +13,7 @@ export default function ChatbotDrawer() {
   const initialBotWelcome = {
     id: 'welcome',
     sender: 'bot',
-    text: lt('Namaste! I am your YojnaSarthi Government Scheme Assistant. Ask me about scheme eligibility rules, required documents, or official application procedures.', 'नमस्ते! मैं योजनासारथी सरकारी योजना सहायक हूँ। आप मुझसे किसी भी सरकारी योजना की पात्रता, आवश्यक दस्तावेज़ या आवेदन प्रक्रिया के बारे में पूछ सकते हैं।'),
+    text: lt('Namaste! I am your DIGNITY Government Scheme Assistant. Ask me about scheme eligibility rules, required documents, or official application procedures.', 'नमस्ते! मैं DIGNITY सरकारी योजना सहायक हूँ। आप मुझसे किसी भी सरकारी योजना की पात्रता, आवश्यक दस्तावेज़ या आवेदन प्रक्रिया के बारे में पूछ सकते हैं।'),
     sources: []
   };
 
@@ -252,7 +252,7 @@ export default function ChatbotDrawer() {
                   </div>
                   <div className="bg-white border border-slate-200 rounded-2xl px-4 py-2.5 text-xs text-slate-600 flex items-center gap-2 shadow-2xs">
                     <span className="font-semibold text-slate-700">
-                      {lt('YojnaSarthi is typing', 'उत्तर तैयार हो रहा है')}
+                      {lt('DIGNITY is typing', 'उत्तर तैयार हो रहा है')}
                     </span>
                     <div className="flex items-center gap-1 pl-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-teal-600 typing-dot-1" />

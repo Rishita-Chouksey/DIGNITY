@@ -1,1 +1,1 @@
-# YojnaSarthi backend package
+# DIGNITY backend package

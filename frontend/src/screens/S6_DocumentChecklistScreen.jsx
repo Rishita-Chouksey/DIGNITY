@@ -340,7 +340,7 @@ export default function S6_DocumentChecklistScreen() {
         <div className="hidden print-only border-b-2 border-slate-900 pb-4 mb-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-extrabold text-slate-900">🏛️ योजनासारथी (YojnaSarthi)</h1>
+              <h1 className="text-2xl font-extrabold text-slate-900">🏛️ DIGNITY</h1>
               <p className="text-xs text-slate-700 font-bold uppercase tracking-wider mt-0.5">
                 नागरिक व्यक्तिगत दस्तावेज़ चेकलिस्ट (Personalized Scheme Document Checklist)
               </p>

@@ -174,7 +174,7 @@ export default function S9_AdminMonitoringScreen() {
 
   // Authentication states for Restricted Administrative Portal
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    return sessionStorage.getItem('yojnasarthi_admin_auth') === 'true';
+    return sessionStorage.getItem('dignity_admin_auth') === 'true';
   });
   const [officerId, setOfficerId] = useState('');
   const [password, setPassword] = useState('');
@@ -234,11 +234,11 @@ export default function S9_AdminMonitoringScreen() {
     const cleanPwd = password.trim();
 
     // Accepted official officer IDs and security credentials
-    const validIds = ['admin', 'officer', 'auditor', 'yojnasarthi', 'officer@yojnasarthi.gov.in', 'evaluator'];
-    const validPasswords = ['admin', 'admin@2026', 'admin123', 'yojnasarthi-admin-secret-2026', 'secret', 'password', 'yojnasarthi2026'];
+    const validIds = ['admin', 'officer', 'auditor', 'dignity', 'officer@dignity.gov.in', 'evaluator'];
+    const validPasswords = ['admin', 'admin@2026', 'admin123', 'dignity-admin-secret-2026', 'secret', 'password', 'dignity2026'];
 
     if (validIds.includes(cleanId) && validPasswords.includes(cleanPwd.toLowerCase())) {
-      sessionStorage.setItem('yojnasarthi_admin_auth', 'true');
+      sessionStorage.setItem('dignity_admin_auth', 'true');
       setIsAuthenticated(true);
       setIsLoggingIn(false);
     } else {
@@ -254,12 +254,12 @@ export default function S9_AdminMonitoringScreen() {
   const handleQuickDemoLogin = () => {
     setOfficerId('admin');
     setPassword('admin');
-    sessionStorage.setItem('yojnasarthi_admin_auth', 'true');
+    sessionStorage.setItem('dignity_admin_auth', 'true');
     setIsAuthenticated(true);
   };
 
   const handleLogout = () => {
-    sessionStorage.removeItem('yojnasarthi_admin_auth');
+    sessionStorage.removeItem('dignity_admin_auth');
     setIsAuthenticated(false);
     setOfficerId('');
     setPassword('');
@@ -452,7 +452,7 @@ export default function S9_AdminMonitoringScreen() {
                 Restricted Administrative Portal
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                YojnaSarthi Intelligence Monitor
+                DIGNITY Intelligence Monitor
               </h2>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                 {lt(
@@ -579,7 +579,7 @@ export default function S9_AdminMonitoringScreen() {
                   <ShieldCheck className="w-3 h-3 mr-1" />
                   {lt('Autonomous Multi-Agent System', 'स्वायत्त बहु-एजेंट प्रणाली', 'स्वायत्त बहु-एजंट प्रणाली', 'স্বায়ত্তশাসিত বহু-এজেন্ট সিস্টেম')}
                 </span>
-                <span className="text-xs text-slate-400">• YojnaSarthi v2.0</span>
+                <span className="text-xs text-slate-400">• DIGNITY v2.0</span>
               </div>
               <h1 className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
                 {lt('Scheme Intelligence & Agent Monitoring', 'योजना इंटेलिजेंस एवं बहु-एजेंट निगरानी डैशबोर्ड', 'योजना बुद्धिमत्ता आणि एजंट देखरेख डॅशबोर्ड', 'স্কিম ইন্টেলিজেন্স এবং এজেন্ট মনিটরিং ড্যাশবোর্ড')}

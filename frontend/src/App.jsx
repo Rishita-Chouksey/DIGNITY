@@ -44,7 +44,7 @@ function MainAppContent() {
         <footer className="no-print border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
           <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-slate-700">YojnaSarthi</span>
+              <span className="font-semibold text-slate-700">DIGNITY</span>
               <span>•</span>
               <span>
                 {lt('Citizen Welfare & Public Scheme Assistance', 'नागरिक कल्याण एवं सार्वजनिक योजना सहायता')}

@@ -14,7 +14,7 @@ else:
     load_dotenv()
 
 class Settings(BaseModel):
-    PROJECT_NAME: str = "YojnaSarthi Backend"
+    PROJECT_NAME: str = "DIGNITY Backend"
     VERSION: str = "2.1.0"
     API_PREFIX: str = "/api"
     
@@ -32,7 +32,7 @@ class Settings(BaseModel):
     TRANSLATION_ENABLED: bool = os.getenv("TRANSLATION_ENABLED", "true").lower() == "true"
     
     # Administrative Security & Monitoring
-    ADMIN_API_KEY: str = os.getenv("ADMIN_API_KEY", "yojnasarthi-admin-secret-2026")
+    ADMIN_API_KEY: str = os.getenv("ADMIN_API_KEY", "dignity-admin-secret-2026")
     ADMIN_USERNAME: str = os.getenv("ADMIN_USERNAME", "")
     ADMIN_PASSWORD_HASH: str = os.getenv("ADMIN_PASSWORD_HASH", "")
     ADMIN_SESSION_SECRET: str = os.getenv("ADMIN_SESSION_SECRET", "")

@@ -663,7 +663,7 @@ export default function S0_StartScreen() {
                   🏛️
                 </div>
                 <div>
-                  <span className="font-black text-white text-xl tracking-tight block">YojnaSarthi</span>
+                  <span className="font-black text-white text-xl tracking-tight block">DIGNITY</span>
                   <span className="text-[11px] text-slate-400 font-medium">National Citizen Welfare Platform</span>
                 </div>
               </div>
@@ -728,7 +728,7 @@ export default function S0_StartScreen() {
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="text-slate-400">Email:</span>
-                  <span className="text-cyan-400 font-mono">helpdesk@yojnasarthi.gov.in</span>
+                  <span className="text-cyan-400 font-mono">helpdesk@dignity.gov.in</span>
                 </p>
                 <p className="text-slate-400 pt-1">
                   {lt('Grievance Redressal: 24x7 Digital Public Portal', 'शिकायत निवारण: 24x7 डिजिटल सहायता')}
