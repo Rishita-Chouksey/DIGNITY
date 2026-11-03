@@ -1,0 +1,855 @@
+{
+  "questions": [
+    {
+      "field": "state",
+      "type": "searchable_picker",
+      "priority_rank": 1,
+      "title_en": "Which state or Union Territory do you reside in?",
+      "title_hi": "आप किस राज्य या केंद्र शासित प्रदेश के मूल निवासी हैं?",
+      "title_bn": "আপনি কোন রাজ্য বা কেন্দ্রশাসিত অঞ্চলের স্থায়ী বাসিন্দা?",
+      "subtitle_en": "Government welfare schemes are often specific to your state of domicile.",
+      "subtitle_hi": "सरकारी कल्याणकारी योजनाएं आपके मूल निवास राज्य के नियमों पर आधारित होती हैं।",
+      "subtitle_bn": "সরকারি কল্যাণমূলক প্রকল্পগুলি আপনার স্থায়ী বসবাসের রাজ্যের ওপর ভিত্তি করে নির্ধারিত হয়।",
+      "explanation_en": "Central schemes apply across India, but state welfare programs require domicile in that specific state.",
+      "explanation_hi": "केंद्रीय योजनाएं पूरे भारत में लागू होती हैं, लेकिन राज्य योजनाएं संबंधित राज्य के निवासियों के लिए होती हैं।",
+      "explanation_bn": "কেন্দ্রীয় প্রকল্পগুলি সমগ্র ভারতে প্রযোজ্য, তবে রাজ্য কল্যাণ প্রকল্পগুলির জন্য নির্দিষ্ট রাজ্যের বাসিন্দা হওয়া প্রয়োজন।",
+      "examples_en": "Madhya Pradesh, Maharashtra, West Bengal, Uttar Pradesh, etc.",
+      "examples_hi": "मध्य प्रदेश, महाराष्ट्र, पश्चिम बंगाल, उत्तर प्रदेश आदि।",
+      "examples_bn": "মধ্যপ্রদেশ, মহারাষ্ট্র, পশ্চিমবঙ্গ, উত্তর প্রদেশ ইত্যাদি।",
+      "options": [
+        {
+          "value": "AP",
+          "label_en": "Andhra Pradesh",
+          "label_hi": "आंध्र प्रदेश",
+          "label_bn": "অন্ধ্রপ্রদেশ",
+          "spoken": [
+            "andhra",
+            "andhra pradesh"
+          ],
+          "label_mr": "आंध्र प्रदेश"
+        },
+        {
+          "value": "AR",
+          "label_en": "Arunachal Pradesh",
+          "label_hi": "अरुणाचल प्रदेश",
+          "label_bn": "অরুণাচল প্রদেশ",
+          "spoken": [
+            "arunachal"
+          ],
+          "label_mr": "अरुणाचल प्रदेश"
+        },
+        {
+          "value": "AS",
+          "label_en": "Assam",
+          "label_hi": "असम",
+          "label_bn": "অসম",
+          "spoken": [
+            "assam",
+            "asom"
+          ],
+          "label_mr": "असम"
+        },
+        {
+          "value": "BR",
+          "label_en": "Bihar",
+          "label_hi": "बिहार",
+          "label_bn": "বিহার",
+          "spoken": [
+            "bihar"
+          ],
+          "label_mr": "बिहार"
+        },
+        {
+          "value": "CT",
+          "label_en": "Chhattisgarh",
+          "label_hi": "छत्तीसगढ़",
+          "label_bn": "ছত্তিশগড়",
+          "spoken": [
+            "chhattisgarh"
+          ],
+          "label_mr": "छत्तीसगड"
+        },
+        {
+          "value": "GA",
+          "label_en": "Goa",
+          "label_hi": "गोवा",
+          "label_bn": "গোয়া",
+          "spoken": [
+            "goa"
+          ],
+          "label_mr": "गोवा"
+        },
+        {
+          "value": "GJ",
+          "label_en": "Gujarat",
+          "label_hi": "गुजरात",
+          "label_bn": "গুজরাত",
+          "spoken": [
+            "gujarat"
+          ],
+          "label_mr": "गुजरात"
+        },
+        {
+          "value": "HR",
+          "label_en": "Haryana",
+          "label_hi": "हरियाणा",
+          "label_bn": "হরিয়ানা",
+          "spoken": [
+            "haryana"
+          ],
+          "label_mr": "हरियाणा"
+        },
+        {
+          "value": "HP",
+          "label_en": "Himachal Pradesh",
+          "label_hi": "हिमाचल प्रदेश",
+          "label_bn": "হিমাচল প্রদেশ",
+          "spoken": [
+            "himachal"
+          ],
+          "label_mr": "हिमाचल प्रदेश"
+        },
+        {
+          "value": "JH",
+          "label_en": "Jharkhand",
+          "label_hi": "झारखंड",
+          "label_bn": "ঝাড়খণ্ড",
+          "spoken": [
+            "jharkhand"
+          ],
+          "label_mr": "झारखंड"
+        },
+        {
+          "value": "KA",
+          "label_en": "Karnataka",
+          "label_hi": "कर्नाटक",
+          "label_bn": "কর্ণাটক",
+          "spoken": [
+            "karnataka"
+          ],
+          "label_mr": "कर्नाटक"
+        },
+        {
+          "value": "KL",
+          "label_en": "Kerala",
+          "label_hi": "केरल",
+          "label_bn": "কেরল",
+          "spoken": [
+            "kerala"
+          ],
+          "label_mr": "केरळ"
+        },
+        {
+          "value": "MP",
+          "label_en": "Madhya Pradesh",
+          "label_hi": "मध्य प्रदेश",
+          "label_bn": "मध्यप्रदेश",
+          "spoken": [
+            "madhya pradesh",
+            "mp"
+          ],
+          "label_mr": "मध्य प्रदेश"
+        },
+        {
+          "value": "MH",
+          "label_en": "Maharashtra",
+          "label_hi": "महाराष्ट्र",
+          "label_bn": "মহারাষ্ট্র",
+          "spoken": [
+            "maharashtra",
+            "mh"
+          ],
+          "label_mr": "महाराष्ट्र"
+        },
+        {
+          "value": "MN",
+          "label_en": "Manipur",
+          "label_hi": "मणिपुर",
+          "label_bn": "মণিপুর",
+          "spoken": [
+            "manipur"
+          ],
+          "label_mr": "मणिपूर"
+        },
+        {
+          "value": "ML",
+          "label_en": "Meghalaya",
+          "label_hi": "मेघालय",
+          "label_bn": "মেঘালয়",
+          "spoken": [
+            "meghalaya"
+          ],
+          "label_mr": "मेघालय"
+        },
+        {
+          "value": "MZ",
+          "label_en": "Mizoram",
+          "label_hi": "मिजोरम",
+          "label_bn": "মিজোরাম",
+          "spoken": [
+            "mizoram"
+          ],
+          "label_mr": "मिझोराम"
+        },
+        {
+          "value": "NL",
+          "label_en": "Nagaland",
+          "label_hi": "नागालैंड",
+          "label_bn": "নাগাল্যান্ড",
+          "spoken": [
+            "nagaland"
+          ],
+          "label_mr": "नागालँड"
+        },
+        {
+          "value": "OD",
+          "label_en": "Odisha",
+          "label_hi": "ओडिशा",
+          "label_bn": "ওড়িশা",
+          "spoken": [
+            "odisha",
+            "orissa"
+          ],
+          "label_mr": "ओडिशा"
+        },
+        {
+          "value": "PB",
+          "label_en": "Punjab",
+          "label_hi": "पंजाब",
+          "label_bn": "পাঞ্জাব",
+          "spoken": [
+            "punjab"
+          ],
+          "label_mr": "पंजाब"
+        },
+        {
+          "value": "RJ",
+          "label_en": "Rajasthan",
+          "label_hi": "राजस्थान",
+          "label_bn": "রাজস্থান",
+          "spoken": [
+            "rajasthan"
+          ],
+          "label_mr": "राजस्थान"
+        },
+        {
+          "value": "SK",
+          "label_en": "Sikkim",
+          "label_hi": "सिक्किम",
+          "label_bn": "সিকিম",
+          "spoken": [
+            "sikkim"
+          ],
+          "label_mr": "सिक्कीम"
+        },
+        {
+          "value": "TN",
+          "label_en": "Tamil Nadu",
+          "label_hi": "तमिलनाडु",
+          "label_bn": "তামিলনাড়ু",
+          "spoken": [
+            "tamil nadu"
+          ],
+          "label_mr": "तमिळनाडू"
+        },
+        {
+          "value": "TG",
+          "label_en": "Telangana",
+          "label_hi": "तेलंगाना",
+          "label_bn": "তেলেঙ্গানা",
+          "spoken": [
+            "telangana"
+          ],
+          "label_mr": "तेलंगणा"
+        },
+        {
+          "value": "TR",
+          "label_en": "Tripura",
+          "label_hi": "त्रिपुरा",
+          "label_bn": "ত্রিপুরা",
+          "spoken": [
+            "tripura"
+          ],
+          "label_mr": "त्रिपुरा"
+        },
+        {
+          "value": "UP",
+          "label_en": "Uttar Pradesh",
+          "label_hi": "उत्तर प्रदेश",
+          "label_bn": "উত্তর প্রদেশ",
+          "spoken": [
+            "uttar pradesh",
+            "up"
+          ],
+          "label_mr": "उत्तर प्रदेश"
+        },
+        {
+          "value": "UT",
+          "label_en": "Uttarakhand",
+          "label_hi": "उत्तराखंड",
+          "label_bn": "উত্তরাখণ্ড",
+          "spoken": [
+            "uttarakhand"
+          ],
+          "label_mr": "उत्तराखंड"
+        },
+        {
+          "value": "WB",
+          "label_en": "West Bengal",
+          "label_hi": "पश्चिम बंगाल",
+          "label_bn": "পশ্চিমবঙ্গ",
+          "spoken": [
+            "west bengal",
+            "bengal",
+            "wb"
+          ],
+          "label_mr": "पश्चिम बंगाल"
+        },
+        {
+          "value": "AN",
+          "label_en": "Andaman and Nicobar Islands",
+          "label_hi": "अंडमान और निकोबार",
+          "label_bn": "আন্দামান ও নিকোবর",
+          "spoken": [
+            "andaman"
+          ],
+          "label_mr": "अंदमान आणि निकोबार"
+        },
+        {
+          "value": "CH",
+          "label_en": "Chandigarh",
+          "label_hi": "चंडीगढ़",
+          "label_bn": "চণ্ডীগড়",
+          "spoken": [
+            "chandigarh"
+          ],
+          "label_mr": "चंदिगढ"
+        },
+        {
+          "value": "DH",
+          "label_en": "Dadra & Nagar Haveli and Daman & Diu",
+          "label_hi": "दादरा नगर हवेली एवं दमन दीव",
+          "label_bn": "দাদরা ও নগর হাভেলি এবং দমন ও দিউ",
+          "spoken": [
+            "daman",
+            "diu"
+          ],
+          "label_mr": "दादरा व नगर हवेली आणि दमण व दीव"
+        },
+        {
+          "value": "DL",
+          "label_en": "Delhi",
+          "label_hi": "दिल्ली",
+          "label_bn": "দিল্লি",
+          "spoken": [
+            "delhi"
+          ],
+          "label_mr": "दिल्ली"
+        },
+        {
+          "value": "JK",
+          "label_en": "Jammu and Kashmir",
+          "label_hi": "जम्मू और कश्मीर",
+          "label_bn": "জম্মু ও কাশ্মীর",
+          "spoken": [
+            "kashmir",
+            "jammu"
+          ],
+          "label_mr": "जम्मू आणि काश्मीर"
+        },
+        {
+          "value": "LA",
+          "label_en": "Ladakh",
+          "label_hi": "लद्दाख",
+          "label_bn": "লাদাখ",
+          "spoken": [
+            "ladakh"
+          ],
+          "label_mr": "लडाख"
+        },
+        {
+          "value": "LD",
+          "label_en": "Lakshadweep",
+          "label_hi": "लक्षद्वीप",
+          "label_bn": "লক্ষদ্বীপ",
+          "spoken": [
+            "lakshadweep"
+          ],
+          "label_mr": "लक्षद्वीप"
+        },
+        {
+          "value": "PY",
+          "label_en": "Puducherry",
+          "label_hi": "पुडुचेरी",
+          "label_bn": "পুদুচেরি",
+          "spoken": [
+            "puducherry",
+            "pondicherry"
+          ],
+          "label_mr": "पुडुचेरी"
+        },
+        {
+          "value": "unknown",
+          "label_en": "Other / Not sure",
+          "label_hi": "अन्य / निश्चित नहीं",
+          "label_bn": "অন্যান্য / নিশ্চিত নই",
+          "spoken": [
+            "other",
+            "not sure",
+            "unknown"
+          ],
+          "label_mr": "इतर / खात्री नाही"
+        }
+      ],
+      "title_mr": "तुम्ही कोणत्या राज्याचे किंवा केंद्रशासित प्रदेशाचे मूळ रहिवासी आहात?",
+      "subtitle_mr": "सरकारी कल्याणकारी योजना तुमच्या मूळ रहिवासी राज्याच्या नियमांवर आधारित असतात.",
+      "explanation_mr": "केंद्रीय योजना संपूर्ण भारतात लागू होतात, परंतु राज्य कल्याणकारी योजनांसाठी संबंधित राज्याचा रहिवासी असणे आवश्यक आहे.",
+      "examples_mr": "महाराष्ट्र, मध्य प्रदेश, पश्चिम बंगाल, उत्तर प्रदेश इत्यादी."
+    },
+    {
+      "field": "occupation",
+      "type": "single_choice",
+      "priority_rank": 2,
+      "title_en": "What is your primary occupation?",
+      "title_hi": "आपका मुख्य व्यवसाय या पेशा क्या है?",
+      "title_bn": "আপনার প্রধান পেশা বা জীবিকা কি?",
+      "subtitle_en": "Helps match occupation-targeted benefits (farmers, students, daily wage workers).",
+      "subtitle_hi": "यह किसान, छात्र, श्रमिक आदि के लिए विशिष्ट सरकारी लाभों की पहचान करता है।",
+      "subtitle_bn": "এটি কৃষক, শিক্ষার্থী ও শ্রমিকদের জন্য বিশেষ সরকারি সুবিধা নির্ধারণে সাহায্য করে।",
+      "explanation_en": "Specialized welfare programs exist for farmers (PM-KISAN), college students (MMVY), and informal workers.",
+      "explanation_hi": "किसानों (पीएम-किसान), कॉलेज छात्रों (मेधावी छात्रवृत्ति) और असंगठित कामगारों के लिए विशिष्ट योजनाएं उपलब्ध हैं।",
+      "explanation_bn": "কৃষকদের জন্য (পিএম-কিষাণ), শিক্ষার্থীদের জন্য (মেধাবী স্কলারশিপ) বিশেষ প্রকল্প রয়েছে।",
+      "options": [
+        {
+          "value": "farmer",
+          "label_en": "Farmer / Cultivator",
+          "label_hi": "किसान / काश्तकार",
+          "label_bn": "কৃষক / চাষী",
+          "label_mr": "शेतकरी / कास्तकार"
+        },
+        {
+          "value": "student",
+          "label_en": "College Student",
+          "label_hi": "कॉलेज छात्र / छात्रा",
+          "label_bn": "কলেজ পড়ুয়া / শিক্ষার্থী",
+          "label_mr": "महाविद्यालयीन विद्यार्थी / विद्यार्थिनी"
+        },
+        {
+          "value": "agricultural_worker",
+          "label_en": "Agricultural Laborer",
+          "label_hi": "खेतिहर मजदूर / कृषि श्रमिक",
+          "label_bn": "কৃষি শ্রমিক / দিনমজুর",
+          "label_mr": "शेतमजूर / कृषी कामगार"
+        },
+        {
+          "value": "self_employed",
+          "label_en": "Self-employed / Small Business",
+          "label_hi": "स्वरोजगार / छोटा व्यवसाय",
+          "label_bn": "স্বনির্ভর / ক্ষুদ্র ব্যবসায়ী",
+          "label_mr": "लहान व्यावसायिक / कारागीर / स्वयंरोजगार"
+        },
+        {
+          "value": "homemaker",
+          "label_en": "Homemaker",
+          "label_hi": "गृहिणी",
+          "label_bn": "গৃহিণী",
+          "label_mr": "गृहिणी"
+        },
+        {
+          "value": "unemployed",
+          "label_en": "Unemployed / Looking for work",
+          "label_hi": "बेरोजगार / काम की तलाश में",
+          "label_bn": "বেকার / কাজের সন্ধানী",
+          "label_mr": "बेरोजगार / नोकरीच्या शोधात"
+        },
+        {
+          "value": "private_job",
+          "label_en": "Private Employment",
+          "label_hi": "निजी नौकरी / वेतनभोगी",
+          "label_bn": "বেসরকারি চাকরি / কর্মচারী",
+          "label_mr": "खाजगी नोकरी / पगारदार"
+        },
+        {
+          "value": "other",
+          "label_en": "Other",
+          "label_hi": "अन्य",
+          "label_bn": "অন্যান্য",
+          "label_mr": "इतर कोणताही व्यवसाय"
+        }
+      ],
+      "title_mr": "तुमचा मुख्य व्यवसाय किंवा उपजीविकेचे साधन काय आहे?",
+      "subtitle_mr": "विविध सरकारी योजना शेतकरी, कामगार, विद्यार्थी आणि महिलांसाठी विशिष्ट लाभ देतात.",
+      "explanation_mr": "योजना विशिष्ट व्यवसाय गटांसाठी असतात, जसे की पीएम किसान शेतकऱ्यांसाठी आणि मेधावी विद्यार्थी योजना विद्यार्थ्यांसाठी आहे.",
+      "examples_mr": "शेतकरी, विद्यार्थी, मजूर, कारागीर इ."
+    },
+    {
+      "field": "gender",
+      "type": "single_choice",
+      "priority_rank": 3,
+      "title_en": "What is your gender?",
+      "title_hi": "आपका लिंग (Gender) क्या है?",
+      "title_bn": "আপনার লিঙ্গ (Gender) কি?",
+      "subtitle_en": "Several welfare programs (e.g. Ladli Behna, Widow Pension) specifically support women.",
+      "subtitle_hi": "कई कल्याणकारी योजनाएं (जैसे लाड़ली बहना, विधवा पेंशन) विशेष रूप से महिलाओं के लिए हैं।",
+      "subtitle_bn": "অনেক সরকারি প্রকল্প (যেমন লাডলি বহনা, বিধবা ভাতা) বিশেষভাবে মহিলাদের জন্য।",
+      "options": [
+        {
+          "value": "female",
+          "label_en": "Female / Woman",
+          "label_hi": "महिला / स्त्री",
+          "label_bn": "মহিলা / নারী",
+          "label_mr": "महिला / स्त्री"
+        },
+        {
+          "value": "male",
+          "label_en": "Male / Man",
+          "label_hi": "पुरुष",
+          "label_bn": "পুরুষ",
+          "label_mr": "पुरुष"
+        },
+        {
+          "value": "transgender",
+          "label_en": "Transgender / Third Gender",
+          "label_hi": "थर्ड जेंडर / अन्य",
+          "label_bn": "রূপান্তরিত লিঙ্গ / অন্যান্য",
+          "label_mr": "तृतीयपंथी / इतर"
+        }
+      ],
+      "title_mr": "तुमचे लिंग (Gender) काय आहे?",
+      "subtitle_mr": "काही योजना केवळ महिलांसाठी किंवा तृतीयपंथी व्यक्तींसाठी विशेष आर्थिक मदत देतात.",
+      "explanation_mr": "लाडकी बहीण आणि गाव की बेटी योजना फक्त महिलांसाठी आहेत.",
+      "examples_mr": "महिला, पुरुष, तृतीयपंथी"
+    },
+    {
+      "field": "age",
+      "type": "number",
+      "priority_rank": 4,
+      "title_en": "What is your current age in completed years?",
+      "title_hi": "आपकी वर्तमान आयु (उम्र) कितने वर्ष है?",
+      "title_bn": "আপনার বর্তমান বয়স কত বছর?",
+      "subtitle_en": "Age criteria determine eligibility for youth scholarships, adult aid, or senior pensions.",
+      "subtitle_hi": "छात्रवृत्ति, युवा योजनाएं अथवा पेंशन के लिए न्यूनतम व अधिकतम आयु सीमा अनिवार्य होती है।",
+      "subtitle_bn": "বৃত্তি, যুব প্রকল্প বা বার্ধক্য ভাতার জন্য সঠিক বয়স সীমা যাচাইয়ের জন্য প্রয়োজন।",
+      "min": 1,
+      "max": 120,
+      "unit": "years",
+      "title_mr": "तुमचे सध्याचे वय किती वर्षे पूर्ण आहे?",
+      "subtitle_mr": "पेन्शन आणि शिष्यवृत्ती योजनांसाठी विशिष्ट वयोमर्यादा ठरलेली असते.",
+      "explanation_mr": "वृद्धापकाळ पेन्शनसाठी ६०+ वर्षे आवश्यक आहेत, तर लाडकी बहीणसाठी २१ ते ६० वर्षे.",
+      "examples_mr": "उदा. १८, २५, ४५, ६० वर्षे"
+    },
+    {
+      "field": "marital_status",
+      "type": "single_choice",
+      "priority_rank": 5,
+      "title_en": "What is your marital status?",
+      "title_hi": "आपकी वैवाहिक स्थिति क्या है?",
+      "title_bn": "আপনার বৈবাহিক অবস্থা কি?",
+      "subtitle_en": "Helps identify specialized aid for widows, married women, or unmarried students.",
+      "subtitle_hi": "विधवा पेंशन, लाड़ली बहना अथवा छात्रवृत्ति योजनाओं के लिए यह जानकारी जरूरी है।",
+      "subtitle_bn": "বিধবা ভাতা বা লাডলি বহনার মতো প্রকল্পগুলি বৈবাহিক অবস্থার ওপর নির্ভরশীল।",
+      "options": [
+        {
+          "value": "married",
+          "label_en": "Married",
+          "label_hi": "विवाहित",
+          "label_bn": "বিবাহিত",
+          "label_mr": "विवाहित"
+        },
+        {
+          "value": "widow",
+          "label_en": "Widow (Husband deceased)",
+          "label_hi": "विधवा (पति का निधन)",
+          "label_bn": "বিধবা (স্বামীহারা)",
+          "label_mr": "विधवा (पतीचे निधन झालेले)"
+        },
+        {
+          "value": "single",
+          "label_en": "Unmarried / Single",
+          "label_hi": "अविवाहित (कुंवारा / कुंवारी)",
+          "label_bn": "অবিবাহিত",
+          "label_mr": "अविवाहित (कुंवार)"
+        },
+        {
+          "value": "divorced",
+          "label_en": "Divorced / Deserted",
+          "label_hi": "तलाकशुदा / परित्यक्ता",
+          "label_bn": "তালাকপ্রাপ্ত / পরিত্যক্তা",
+          "label_mr": "घटस्फोटित / परित्यक्ता"
+        }
+      ],
+      "title_mr": "तुमची वैवाहिक स्थिती काय आहे?",
+      "subtitle_mr": "विधवा, परित्यक्ता आणि विवाहित महिलांसाठी विशेष सामाजिक सुरक्षा योजना आहेत.",
+      "explanation_mr": "इंदिरा गांधी राष्ट्रीय विधवा पेन्शन योजनेसाठी पतीचे निधन झालेले असणे आवश्यक आहे.",
+      "examples_mr": "विवाहित, विधवा, अविवाहित"
+    },
+    {
+      "field": "residence_type",
+      "type": "single_choice",
+      "priority_rank": 6,
+      "title_en": "Do you reside in a rural village or an urban city area?",
+      "title_hi": "आपका निवास क्षेत्र किस प्रकार का है?",
+      "title_bn": "আপনার বসবাসের এলাকা কোন ধরনের?",
+      "subtitle_en": "PMAY-G rural housing is specifically for village Gram Panchayat residents.",
+      "subtitle_hi": "पीएम आवास ग्रामीण जैसी योजनाएं विशेष रूप से ग्रामीण ग्राम पंचायत क्षेत्रों के लिए हैं।",
+      "subtitle_bn": "প্রধানমন্ত্রী গ্রামীণ আবাস যোজনা বিশেষত গ্রাম পঞ্চায়েতের বাসিন্দাদের জন্য।",
+      "options": [
+        {
+          "value": "rural",
+          "label_en": "Rural (Village / Gram Panchayat)",
+          "label_hi": "ग्रामीण (गांव / ग्राम पंचायत)",
+          "label_bn": "গ্রামীণ (গ্রাম / গ্রাম পঞ্চায়েত)",
+          "label_mr": "ग्रामीण (गाव / ग्रामपंचायत)"
+        },
+        {
+          "value": "urban",
+          "label_en": "Urban (City / Municipality / Ward)",
+          "label_hi": "शहरी (शहर / नगर पालिका / वार्ड)",
+          "label_bn": "শহুরে (শহর / পৌরসভা / ওয়ার্ড)",
+          "label_mr": "शहरी (शहर / नगरपालिका / प्रभाग)"
+        },
+        {
+          "value": "not_sure",
+          "label_en": "Semi-urban / Not sure",
+          "label_hi": "अर्ध-शहरी / निश्चित नहीं",
+          "label_bn": "উপশহর / নিশ্চিত নই",
+          "label_mr": "निम-शहरी / खात्री नाही"
+        }
+      ],
+      "title_mr": "तुमचे निवास क्षेत्र कोणत्या प्रकारचे आहे?",
+      "subtitle_mr": "काही योजना केवळ ग्रामीण भागासाठी (उदा. पीएम आवास ग्रामीण) किंवा शहरी भागासाठी असतात.",
+      "explanation_mr": "ग्रामीण आणि शहरी भागासाठी गृहनिर्माण आणि उपजीविका योजना वेगवेगळ्या असतात.",
+      "examples_mr": "ग्रामीण किंवा शहरी"
+    },
+    {
+      "field": "category",
+      "type": "single_choice",
+      "priority_rank": 7,
+      "title_en": "Which social category do you belong to?",
+      "title_hi": "आप किस सामाजिक वर्ग (श्रेणी) से संबंधित हैं?",
+      "title_bn": "আপনি কোন সামাজিক শ্রেণি (ক্যাটেগরি)-র অন্তর্গত?",
+      "subtitle_en": "Helps match affirmative benefits for SC, ST, OBC, or EWS communities.",
+      "subtitle_hi": "अनुसूचित जाति, जनजाति, अन्य पिछड़ा वर्ग अथवा ईडब्ल्यूएस हेतु विशेष योजनाओं की पहचान करता है।",
+      "subtitle_bn": "তফসিলি জাতি, উপজাতি, ওবিসি বা ইডব্লিউএস শ্রেণির বিশেষ সুবিধার জন্য।",
+      "options": [
+        {
+          "value": "General",
+          "label_en": "General / Unreserved",
+          "label_hi": "सामान्य (General)",
+          "label_bn": "সাধারণ (General)",
+          "label_mr": "खुला प्रवर्ग (General)"
+        },
+        {
+          "value": "OBC",
+          "label_en": "Other Backward Class (OBC)",
+          "label_hi": "अन्य पिछड़ा वर्ग (OBC)",
+          "label_bn": "অন্যান্য অনগ্রসর শ্রেণি (OBC)",
+          "label_mr": "इतर मागास वर्ग (OBC)"
+        },
+        {
+          "value": "SC",
+          "label_en": "Scheduled Caste (SC)",
+          "label_hi": "अनुसूचित जाति (SC)",
+          "label_bn": "তফসিলি জাতি (SC)",
+          "label_mr": "अनुसूचित जाती (SC)"
+        },
+        {
+          "value": "ST",
+          "label_en": "Scheduled Tribe (ST)",
+          "label_hi": "अनुसूचित जनजाति (ST)",
+          "label_bn": "তফসিলি উপজাতি (ST)",
+          "label_mr": "अनुसूचित जमाती (ST)"
+        },
+        {
+          "value": "EWS",
+          "label_en": "Economically Weaker Section (EWS)",
+          "label_hi": "आर्थिक रूप से कमजोर वर्ग (EWS)",
+          "label_bn": "অর্থনৈতিকভাবে দুর্বল শ্রেণি (EWS)",
+          "label_mr": "आर्थिक दुर्बल घटक (EWS)"
+        }
+      ],
+      "title_mr": "तुम्ही कोणत्या सामाजिक प्रवर्गाशी (कॅटेगरी) संबंधित आहात?",
+      "subtitle_mr": "अनुसूचित जाती, जमाती आणि इतर मागासवर्गीयांसाठी विशेष आर्थिक तरतूद असते.",
+      "explanation_mr": "पोस्ट मॅट्रिक शिष्यवृत्ती आणि इतर कल्याणकारी योजनांमध्ये सामाजिक प्रवर्गावर आधारित सवलती मिळतात.",
+      "examples_mr": "खुला (General), ओबीसी, एससी, एसटी"
+    },
+    {
+      "field": "annual_income",
+      "type": "number",
+      "priority_rank": 8,
+      "title_en": "What is your total annual family income in Rupees (₹)?",
+      "title_hi": "आपके परिवार की कुल वार्षिक आय (रुपये में) कितनी है?",
+      "title_bn": "আপনার পরিবারের মোট বার্ষিক আয় কত টাকা (₹)?",
+      "subtitle_en": "Government welfare schemes have statutory family income thresholds (e.g., ₹2.5L or ₹6L).",
+      "subtitle_hi": "सरकारी योजनाओं में अधिकतम पारिवारिक आय सीमा (जैसे ₹2.5 लाख या ₹6 लाख) निर्धारित होती है।",
+      "subtitle_bn": "সরকারি কল্যাণমূলক প্রকল্পে পারিবারিক আয়ের সর্বোচ্চ সীমা নির্ধারিত থাকে।",
+      "min": 0,
+      "max": 100000000,
+      "unit": "INR",
+      "title_mr": "तुमच्या संपूर्ण कुटुंबाचे वार्षिक उत्पन्न अंदाजे किती रुपये आहे?",
+      "subtitle_mr": "बहुतांश सरकारी योजनांसाठी उत्पन्नाची विशिष्ट कमाल मर्यादा असते.",
+      "explanation_mr": "उत्पन्न प्रमाणपत्रावर आधारित उत्पन्न योजनांच्या निकषांशी जुळणे आवश्यक आहे.",
+      "examples_mr": "उदा. १,२०,००० किंवा २,५०,००० रुपये"
+    },
+    {
+      "field": "bpl_card_holder",
+      "type": "boolean",
+      "priority_rank": 9,
+      "title_en": "Does your family possess a BPL or Antyodaya ration card?",
+      "title_hi": "क्या आपके परिवार के पास बीपीएल (BPL) अथवा अंत्योदय राशन कार्ड है?",
+      "title_bn": "আপনার পরিবারের কি বিপিএল (BPL) বা অন্ত্যোদয় রেশন কার্ড রয়েছে?",
+      "subtitle_en": "Ayushman Bharat PM-JAY and National Widow Pension require BPL status.",
+      "subtitle_hi": "आयुष्मान भारत और राष्ट्रीय पेंशन योजनाओं के लिए बीपीएल राशन कार्ड अनिवार्य है।",
+      "subtitle_bn": "আয়ুষ্মান ভারত ও জাতীয় পেনশনের জন্য বিপিএল রেশন কার্ড থাকা প্রয়োজন।",
+      "options": [
+        {
+          "value": true,
+          "label_en": "Yes, have BPL/Antyodaya card",
+          "label_hi": "हाँ, बीपीएल/अंत्योदय कार्ड है",
+          "label_bn": "হ্যাঁ, বিপিএল/অন্ত্যোদয় কার্ড আছে",
+          "label_mr": "होय, बीपीएल/अंत्योदय रेशन कार्ड आहे"
+        },
+        {
+          "value": false,
+          "label_en": "No, standard ration card or none",
+          "label_hi": "नहीं, सामान्य राशन कार्ड है या नहीं है",
+          "label_bn": "না, সাধারণ কার্ড আছে বা নেই",
+          "label_mr": "नाही, सामान्य रेशन कार्ड आहे किंवा नाही"
+        }
+      ],
+      "title_mr": "तुमच्या कुटुंबाकडे बीपीएल किंवा अंत्योदय रेशन कार्ड आहे का?",
+      "subtitle_mr": "दारिद्र्यरेषेखालील (BPL) कुटुंबांसाठी अनेक योजनांमध्ये थेट प्राधान्य मिळते.",
+      "explanation_mr": "आयुष्मान भारत आणि राष्ट्रीय वृद्धापकाळ पेन्शनसाठी बीपीएल शिधापत्रिका आवश्यक असते.",
+      "examples_mr": "पिवळे/गुलाबी बीपीएल कार्ड किंवा अंत्योदय अन्न योजना कार्ड"
+    },
+    {
+      "field": "has_pucca_house",
+      "type": "boolean",
+      "priority_rank": 10,
+      "title_en": "Does your family own a permanent pucca (concrete/brick) house?",
+      "title_hi": "क्या आपके परिवार के पास पक्का (ईंट और कंक्रीट की छत वाला) मकान है?",
+      "title_bn": "আপনার পরিবারের কি নিজস্ব পাকা (ইট ও ছাদের) বাড়ি রয়েছে?",
+      "subtitle_en": "Pradhan Mantri Awas Yojana (PMAY-G) grants are for families without a pucca house.",
+      "subtitle_hi": "प्रधानमंत्री आवास योजना (PMAY-G) कच्चे मकान अथवा बेघर परिवारों को पक्का मकान देने के लिए है।",
+      "subtitle_bn": "প্রধানমন্ত্রী গ্রামীণ আবাস যোজনা কাঁচা বাড়ি বা গৃহহীনদের পাকা বাড়ি নির্মাণের জন্য।",
+      "options": [
+        {
+          "value": true,
+          "label_en": "Yes, we own a pucca house",
+          "label_hi": "हाँ, पक्का मकान है",
+          "label_bn": "হ্যাঁ, পাকা বাড়ি রয়েছে",
+          "label_mr": "होय, स्वतःचे पक्के घर आहे"
+        },
+        {
+          "value": false,
+          "label_en": "No, living in kutcha house or homeless",
+          "label_hi": "नहीं, कच्चा मकान है या अपना मकान नहीं है",
+          "label_bn": "না, কাঁচা বাড়ি রয়েছে বা কোনো পাকা বাড়ি নেই",
+          "label_mr": "नाही, कच्चे घर आहे किंवा घर नाही"
+        }
+      ],
+      "title_mr": "तुमच्याकडे स्वतःचे पक्के घर (काँक्रीट छत असलेले) आहे का?",
+      "subtitle_mr": "प्रधानमंत्री आवास योजनेसाठी कुटुंबाकडे आधीपासून पक्के घर नसावे.",
+      "explanation_mr": "पक्के घर नसलेल्या किंवा कच्च्या घरात राहणाऱ्या कुटुंबांना नवीन घरासाठी अनुदान मिळते.",
+      "examples_mr": "कच्चे घर/झोपडी किंवा स्वतःचे पक्के घर"
+    },
+    {
+      "field": "landholding_hectares",
+      "type": "number",
+      "priority_rank": 11,
+      "title_en": "How much cultivable agricultural land does your family own (in hectares)?",
+      "title_hi": "आपके परिवार के पास कितनी कृषि योग्य भूमि (हेक्टेयर में) है?",
+      "title_bn": "আপনার পরিবারের আবাদযোগ্য কৃষিজমি (হেক্টরে) কত?",
+      "subtitle_en": "PM-KISAN requires ownership of cultivable agricultural land (1 hectare ≈ 2.47 acres).",
+      "subtitle_hi": "पीएम किसान सम्मान निधि हेतु कृषि भूमि का मालिकाना हक आवश्यक है (1 हेक्टेयर ≈ 2.47 एकड़)।",
+      "subtitle_bn": "পিএম কিষাণ প্রকল্পের জন্য কৃষিজমির মালিকানা প্রয়োজন (১ হেক্টর ≈ ২.৪৭ একর)।",
+      "min": 0,
+      "max": 100,
+      "unit": "hectares",
+      "title_mr": "तुमच्या कुटुंबाकडे एकूण किती हेक्टर शेतजमीन आहे?",
+      "subtitle_mr": "पीएम किसान योजनेसाठी अल्प आणि अत्यल्प भूधारक शेतकरी पात्र असतात.",
+      "explanation_mr": "१ हेक्टर म्हणजे अंदाजे २.४७ एकर जमीन. ७/१२ किंवा खसरा नोंदीनुसार नोंदवा.",
+      "examples_mr": "उदा. ०.८ हेक्टर (अंदाजे २ एकर), १.५ हेक्टर"
+    },
+    {
+      "field": "student_class12_marks_percent",
+      "type": "number",
+      "priority_rank": 12,
+      "title_en": "What was your score percentage in the Class 12 board examination?",
+      "title_hi": "12वीं बोर्ड परीक्षा में आपका कुल प्रतिशत कितना था?",
+      "title_bn": "দ্বাদশ শ্রেণির বোর্ড পরীক্ষায় আপনার প্রাপ্ত শতাংশ নম্বর কত ছিল?",
+      "subtitle_en": "MMVY scholarship requires 70%+ in MP Board or 85%+ in CBSE/ICSE.",
+      "subtitle_hi": "मुख्यमंत्री मेधावी विद्यार्थी योजना (MMVY) हेतु 12वीं में MP बोर्ड से 70%+ या CBSE/ICSE से 85%+ अंक आवश्यक हैं।",
+      "subtitle_bn": "মেধাবী প্রকল্পের জন্য এমপি বোর্ডে ৭০%+ বা সিবিএসই/আইসিএসই-তে ৮৫%+ নম্বর প্রয়োজন।",
+      "min": 0,
+      "max": 100,
+      "unit": "%",
+      "title_mr": "तुम्हाला १२ वीच्या बोर्ड परीक्षेत किती टक्के गुण मिळाले आहेत?",
+      "subtitle_mr": "मेधावी विद्यार्थी शिष्यवृत्ती योजनेसाठी गुणवत्तेचा निकष आवश्यक असतो.",
+      "explanation_mr": "एमएमव्हीवाय योजनेसाठी राज्य मंडळात ७०%+ किंवा सीबीएसई/आयसीएसईमध्ये ८५%+ गुण आवश्यक असतात.",
+      "examples_mr": "उदा. ७५%, ८२%, ९०%"
+    },
+    {
+      "field": "enrolled_higher_education",
+      "type": "boolean",
+      "priority_rank": 13,
+      "title_en": "Are you currently enrolled in a recognised college, university, or professional course?",
+      "title_hi": "क्या आप किसी मान्यता प्राप्त कॉलेज या उच्च शिक्षण संस्थान में नामांकित हैं?",
+      "title_bn": "আপনি কি কোনো স্বীকৃত কলেজ বা বিশ্ববিদ্যালয়ে পাঠরত?",
+      "subtitle_en": "Higher education scholarships require active enrollment in degree or diploma courses.",
+      "subtitle_hi": "उच्च शिक्षा छात्रवृत्ति हेतु स्नातक या व्यावसायिक पाठ्यक्रम में सक्रिय प्रवेश आवश्यक है।",
+      "subtitle_bn": "উচ্চশিক্ষার বৃত্তির জন্য স্নাতক বা ডিপ্লোমা কোর্সে ভর্তি থাকা বাধ্যতামূলক।",
+      "options": [
+        {
+          "value": true,
+          "label_en": "Yes, actively enrolled in higher education",
+          "label_hi": "हाँ, उच्च शिक्षा में नामांकित हूँ",
+          "label_bn": "হ্যাঁ, উচ্চশিক্ষায় পাঠরত",
+          "label_mr": "होय, उच्च शिक्षणात शिक्षण घेत आहे"
+        },
+        {
+          "value": false,
+          "label_en": "No, not enrolled",
+          "label_hi": "नहीं, नामांकित नहीं हूँ",
+          "label_bn": "না, পাঠরত নই",
+          "label_mr": "नाही, उच्च शिक्षणात प्रवेश घेतलेला नाही"
+        }
+      ],
+      "title_mr": "तुम्ही पदवी (Engineering, Medical, Law, Degree) किंवा उच्च शिक्षणात प्रवेश घेतला आहे का?",
+      "subtitle_mr": "उच्च शिक्षण शुल्काची १००% प्रतिपूर्ती मिळवण्यासाठी अधिकृत कॉलेज प्रवेश आवश्यक आहे.",
+      "explanation_mr": "एमएमव्हीवाय आणि पोस्ट मॅट्रिक योजनेत उच्च शिक्षणाची संपूर्ण फी सरकार भरते.",
+      "examples_mr": "इंजिनिअरिंग, एमबीबीएस, बीए, बी.कॉम, बीएससी इ."
+    },
+    {
+      "field": "disability_status",
+      "type": "boolean",
+      "priority_rank": 14,
+      "title_en": "Do you possess a certified disability (Divyangjan) certificate?",
+      "title_hi": "क्या आपके पास 40% या अधिक का दिव्यांगता (विकलांगता) प्रमाण पत्र है?",
+      "title_bn": "আপনার কি কোনো স্বীকৃত প্রতিবন্ধী (দিব্যাঙ্গ) শংসাপত্র রয়েছে?",
+      "subtitle_en": "Special pensions and reservations are provided for persons with certified disabilities.",
+      "subtitle_hi": "दिव्यांग व्यक्तियों के लिए विशेष सामाजिक सुरक्षा पेंशन और लाभ प्रदान किए जाते हैं।",
+      "subtitle_bn": "প্রতিবন্ধী ব্যক্তিদের জন্য বিশেষ সামাজিক পেনশন ও সরকারি সুবিধা রয়েছে।",
+      "options": [
+        {
+          "value": true,
+          "label_en": "Yes, certified person with disability",
+          "label_hi": "हाँ, दिव्यांगता प्रमाण पत्र है",
+          "label_bn": "হ্যাঁ, প্রতিবন্ধী শংসাপত্র রয়েছে",
+          "label_mr": "होय, दिव्यांगत्व प्रमाणपत्र आहे"
+        },
+        {
+          "value": false,
+          "label_en": "No",
+          "label_hi": "नहीं",
+          "label_bn": "না",
+          "label_mr": "नाही"
+        }
+      ],
+      "title_mr": "कुटुंबात कोणी ४०% किंवा त्याहून अधिक दिव्यांग (अपंगत्व असलेले) व्यक्ती आहे का?",
+      "subtitle_mr": "विशेष दिव्यांग व्यक्तींसाठी निवृत्तीवेतन आणि सहाय्यक उपकरणांच्या विशेष योजना आहेत.",
+      "explanation_mr": "संजय गांधी निराधार योजना आणि इंदिरा गांधी राष्ट्रीय दिव्यांग पेन्शनसाठी दिव्यांग प्रमाणपत्र आवश्यक आहे.",
+      "examples_mr": "सक्षम वैद्यकीय मंडळाचे ४०%+ दिव्यांग प्रमाणपत्र"
+    }
+  ]
+}

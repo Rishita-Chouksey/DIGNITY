@@ -1,17 +1,55 @@
-# Local environment configuration and secrets
-.env
-.env.*
-!.env.example
-!.env.*.example
-
-# Python
-backend/.venv/
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
+*.pyd
 
-# Next.js
+# Virtual Environments - NEVER COMMIT OR PUSH TO REPO!
+backend_venv/
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets - NEVER COMMIT REAL KEYS!
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Node / Frontend
+node_modules/
 frontend/node_modules/
-frontend/.next/
+dist/
+frontend/dist/
+.npm
+.eslintcache
 
-# Local output
-backend/eval/results.md
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+backend/data/*.db
+*.db-shm
+*.db-wal
+backend/data/*.db-shm
+backend/data/*.db-wal
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
